@@ -1,0 +1,33 @@
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  height: 3.5rem;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.logo > div {
+  background-color: var(--primary);
+  margin-right: 0.5rem;
+  height: 25px;
+  width: 35px;
+}
+
+.logo > h1 {
+  font-weight: 400;
+}
+
+header > nav {
+  width: clamp(5rem, 33%, 15rem);
+}
+
+.link-menu {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}

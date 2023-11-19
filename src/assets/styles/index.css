@@ -1,0 +1,27 @@
+:root {
+  --white: #ecebf9;
+  --primary: #8944c5;
+  --secondary: #3b1239;
+  --accent: #c94fc5;
+  --bg: #080717;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--white);
+  font-size: 18px;
+  font-family: "Roboto Condensed", sans-serif;
+  height: 100svh;
+}
+
+#root {
+  background-color: var(--bg);
+  height: 100%;
+}
