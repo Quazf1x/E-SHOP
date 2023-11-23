@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <header>
@@ -9,13 +11,15 @@ function Header() {
       <nav>
         <ul className="link-menu">
           <li>
-            <a>Home</a>
+            <Link to="#">Home</Link>
           </li>
+          <hr />
           <li>
-            <a>Browse</a>
+            <Link to="#">Browse</Link>
           </li>
+          <hr />
           <li>
-            <a>Checkout</a>
+            <Link to="#">Checkout</Link>
           </li>
         </ul>
       </nav>

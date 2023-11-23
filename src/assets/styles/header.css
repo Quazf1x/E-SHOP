@@ -31,3 +31,25 @@ header > nav {
   list-style: none;
   justify-content: space-around;
 }
+
+.link-menu > li > a {
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.link-menu > li > a::after {
+  content: "";
+  background-color: var(--white);
+  position: absolute;
+  bottom: -0.2rem;
+  left: 1px;
+  height: 2px;
+  width: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.link-menu > li > a:hover::after {
+  width: 100%;
+}
