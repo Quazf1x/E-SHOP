@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import "./assets/styles/index.css";
 import "./assets/styles/header.css";
+import "./assets/styles/homePage.css";
 
 const router = createBrowserRouter([
   {
