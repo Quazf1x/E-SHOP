@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+const Header = () => {
   return (
     <header>
       <div className="logo">
@@ -25,6 +25,6 @@ function Header() {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;
