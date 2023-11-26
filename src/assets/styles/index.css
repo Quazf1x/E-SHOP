@@ -1,7 +1,8 @@
 :root {
   --white: #ecebf9;
+  --greyish: #979797;
   --primary: #c94fc5;
-  --bg: #101010;
+  --bg: hsl(0, 0%, 6%);
 }
 *,
 *::after,
@@ -21,4 +22,11 @@ body {
 #root {
   background-color: var(--bg);
   height: 100%;
+}
+
+.highlight {
+  background-color: var(--primary);
+  border-radius: 3rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
 }

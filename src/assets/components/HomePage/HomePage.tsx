@@ -39,7 +39,8 @@ const HomePage = () => {
       <div id="banner-info">
         <h1>
           <FontAwesomeIcon icon={faFire} style={{ marginRight: "1rem" }} />
-          All of your favourite videogames right here, right now.
+          All of your favourite <span className="highlight">videogames</span>
+          right here, right now.
         </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel nesciunt
