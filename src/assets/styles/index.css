@@ -1,13 +1,8 @@
 :root {
   --white: #ecebf9;
-  --primary: #8944c5;
-  --secondary: #3b1239;
-  --accent: #c94fc5;
-  --lighter-accent: #d466d0;
+  --primary: #c94fc5;
   --bg: #101010;
-  --grey: #262626;
 }
-
 *,
 *::after,
 *::before {

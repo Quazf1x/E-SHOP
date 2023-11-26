@@ -1,22 +1,37 @@
 .home-banner {
-  align-items: center;
-  display: flex;
-  height: 50svh;
+  display: grid;
+  grid-template: 5rem 1fr 10rem / 1fr 1fr;
+  gap: 0 10svw;
+  margin: auto;
+  margin-top: 2rem;
+  height: 80svh;
+  width: clamp(400px, 90%, 1200px);
 }
 
 .home-banner > div {
-  margin-left: 5svw;
+  display: flex;
+  align-items: center;
+  outline: 1px solid red;
+  width: clamp(400px, 100%, 800px);
 }
 
-.home-banner > div > h1 {
-  font-size: 4rem;
+#banner-prefix > p {
+  margin-left: 0.75rem;
+}
+
+#banner-info {
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+#banner-info > h1 {
+  font-size: 2.8rem;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
-.banner-desc {
-  width: 40%;
-  margin: 2svh 0;
+#carousel {
+  grid-row: 2/4;
+  grid-column: 2/3;
 }
 
 .buy-btn {
@@ -24,9 +39,6 @@
   cursor: pointer;
   margin-top: 2rem;
   font-weight: 500;
-}
-
-.buy-btn {
   background-color: var(--white);
   border-radius: 15px;
   font-size: 1rem;

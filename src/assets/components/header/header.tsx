@@ -13,11 +13,9 @@ const Header = () => {
           <li>
             <Link to="#">Home</Link>
           </li>
-          <hr />
           <li>
             <Link to="#">Browse</Link>
           </li>
-          <hr />
           <li>
             <Link to="#">Checkout</Link>
           </li>
