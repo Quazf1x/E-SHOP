@@ -2,7 +2,9 @@
   --white: #ecebf9;
   --greyish: #979797;
   --primary: #c94fc5;
-  --bg: hsl(0, 0%, 6%);
+  --lighter-primary: #e574e1;
+  --bg: #0f0f0f;
+  --lighter-bg: #313131;
 }
 *,
 *::after,

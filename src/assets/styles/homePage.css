@@ -20,11 +20,10 @@
 
 #banner-info {
   flex-direction: column;
-  margin-bottom: 2rem;
 }
 
 #banner-info > h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 500;
   line-height: 4.8rem;
 }
@@ -36,24 +35,76 @@
   line-height: 1.5rem;
 }
 
+#banner-btn-wrapper {
+  align-self: flex-start;
+}
+
 #carousel {
   grid-row: 2/4;
   grid-column: 2/3;
 }
 
-.buy-btn {
-  border: none;
+.banner-btn {
+  border-radius: 5rem;
+  color: var(--white);
   cursor: pointer;
-  margin-top: 2rem;
+  transition: all 0.15s ease-in-out;
   font-weight: 500;
-  background-color: var(--white);
-  border-radius: 15px;
+}
+
+.banner-btn > svg {
+  margin-right: 0.5rem;
+}
+
+.buy-btn {
+  background-color: var(--primary);
+  border: none;
   font-size: 1rem;
-  padding: 1rem 4rem;
-  transition: all 0.2s ease-in-out;
+  padding: 1rem 3rem;
 }
 
 .buy-btn:hover {
-  background-color: var(--primary);
-  color: white;
+  background-color: var(--lighter-primary);
+}
+
+.banner-btn:active {
+  transform: scale(0.9);
+}
+
+.bleak-btn {
+  background-color: var(--lighter-bg);
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.8rem 2rem;
+  margin-left: 1rem;
+}
+
+#banner-credits {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#banner-credits > h3 {
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+#banner-credits > div {
+  align-items: center;
+  display: flex;
+  color: var(--greyish);
+}
+
+.credit-wrapper {
+  align-items: center;
+  color: var(--greyish);
+  text-decoration: none;
+  display: flex;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+
+.credit-wrapper > svg {
+  margin-right: 0.5rem;
 }

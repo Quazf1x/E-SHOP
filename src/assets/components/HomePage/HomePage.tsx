@@ -2,7 +2,15 @@ import { useEffect, useState } from "react";
 import fetchData from "../../API/FetchData.ts";
 import getRandNum from "../../helpers/rand.ts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faFire } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faFire,
+  faGamepad,
+  faRegistered,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+import Credit from "./Credit.tsx";
 
 const MAX_PAGE = 5;
 
@@ -48,8 +56,30 @@ const HomePage = () => {
           consequuntur tempore facere, in deleniti dolore reiciendis iusto sed,
           ratione aperiam!
         </p>
+        <div id="banner-btn-wrapper">
+          <button className="banner-btn buy-btn">
+            <FontAwesomeIcon icon={faGamepad} />
+            Browse
+          </button>
+          <button className="banner-btn bleak-btn">Placeholder</button>
+        </div>
       </div>
-      <div>4</div>
+      <div id="banner-credits">
+        <h3>Credits</h3>
+        <div>
+          <Credit
+            link="https://github.com/Quazf1x"
+            icon={faGithub}
+            linkName="Quazf1x"
+          />
+          <Credit
+            link="https://github.com/Quazf1x"
+            icon={faRegistered}
+            linkName="Rawg API"
+          />
+          ... and many more
+        </div>
+      </div>
       <div id="carousel">5</div>
     </section>
   );
