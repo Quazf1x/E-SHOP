@@ -8,6 +8,7 @@ import {
   faFire,
   faGamepad,
   faRegistered,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -42,8 +43,11 @@ const HomePage = () => {
         <FontAwesomeIcon icon={faCheck} style={{ color: "var(--primary)" }} />
         <p>Version 1.0 online!</p>
       </div>
-      <div>
-        <h2>Featured videogames</h2>
+      <div id="carousel-header-wrapper">
+        <h2>
+          Featured videogames{" "}
+          <FontAwesomeIcon icon={faStar} style={{ color: "var(--primary)" }} />
+        </h2>
       </div>
       <div id="banner-info">
         <h1>

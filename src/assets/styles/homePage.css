@@ -111,6 +111,12 @@
   max-width: 600px;
 }
 
+#carousel-header-wrapper {
+  align-items: end;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
 .carousel-wrapper {
   align-items: center;
   display: flex;
@@ -126,7 +132,7 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   height: 90%;
-  width: 90%;
+  width: 70%;
   position: relative;
 }
 
@@ -139,7 +145,7 @@
 .slider-nav {
   display: flex;
   position: absolute;
-  bottom: 7rem;
+  bottom: 6.5rem;
   z-index: 1;
 }
 
