@@ -1,7 +1,7 @@
 .home-banner {
   display: grid;
-  grid-template: 5rem 1fr 10rem / 1fr 1fr;
-  gap: 0 7svw;
+  grid-template: 5rem 1fr 7rem / 1fr;
+  gap: 0 2svw;
   margin: auto;
   margin-top: 2rem;
   height: 80svh;
@@ -37,11 +37,6 @@
 
 #banner-btn-wrapper {
   align-self: flex-start;
-}
-
-#carousel {
-  grid-row: 2/4;
-  grid-column: 2/3;
 }
 
 .banner-btn {
@@ -107,4 +102,53 @@
 
 .credit-wrapper > svg {
   margin-right: 0.5rem;
+}
+
+#home-fifth-sec-wrapper {
+  grid-row: 2/4;
+  grid-column: 2/3;
+
+  max-width: 600px;
+}
+
+.carousel-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-slider {
+  border-radius: 20px;
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  height: 90%;
+  width: 90%;
+  position: relative;
+}
+
+.carousel-slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  position: absolute;
+  bottom: 7rem;
+  z-index: 1;
+}
+
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--white);
+  opacity: 0.75;
+  margin: 0 0.2rem;
+  transform: all ease-in-out 0.2s;
 }

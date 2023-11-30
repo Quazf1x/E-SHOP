@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import fetchData from "../../API/FetchData.ts";
 import getRandNum from "../../helpers/rand.ts";
+import Carousel from "./Carousel.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheck,
@@ -80,7 +81,9 @@ const HomePage = () => {
           ... and many more
         </div>
       </div>
-      <div id="carousel">5</div>
+      <div id="home-fifth-sec-wrapper">
+        <Carousel />
+      </div>
     </section>
   );
 };
