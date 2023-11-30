@@ -30,9 +30,9 @@
 
 #banner-info > p {
   color: var(--greyish);
-  margin: 1rem 0;
+  margin: 2rem 0;
 
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 #banner-btn-wrapper {
@@ -77,6 +77,7 @@
 #banner-credits {
   flex-direction: column;
   align-items: flex-start;
+  padding-top: 1rem;
 }
 
 #banner-credits > h3 {
