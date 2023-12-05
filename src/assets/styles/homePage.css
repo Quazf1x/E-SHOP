@@ -1,17 +1,19 @@
 .home-banner {
   display: grid;
-  grid-template: 5rem 1fr 7rem / 1fr;
+  grid-template: 5rem 26rem 7rem / 1fr 1fr;
   gap: 0 2svw;
   margin: auto;
   margin-top: 2rem;
-  height: 80svh;
+  height: 600px;
   width: clamp(400px, 90%, 1200px);
+  outline: 1px solid red;
 }
 
 .home-banner > div {
   display: flex;
   align-items: center;
   width: clamp(400px, 100%, 800px);
+  height: 100%;
 }
 
 #banner-prefix > p {
@@ -108,7 +110,6 @@
 #home-fifth-sec-wrapper {
   grid-row: 2/4;
   grid-column: 2/3;
-
   max-width: 600px;
 }
 
@@ -138,9 +139,9 @@
 }
 
 .carousel-slider img {
-  flex: 1 0 100%;
   scroll-snap-align: start;
   object-fit: cover;
+  width: 100%;
 }
 
 .slider-nav {
@@ -158,4 +159,14 @@
   opacity: 0.75;
   margin: 0 0.2rem;
   transform: all ease-in-out 0.2s;
+}
+
+@media only screen and (max-width: 1240px) {
+  #banner-info > h1 {
+    line-height: 4rem;
+  }
+
+  #banner-info > p {
+    margin: 0;
+  }
 }
