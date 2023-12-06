@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import fetchData from "../../API/FetchData.ts";
-import getRandNum from "../../helpers/rand.ts";
 import Carousel from "./Carousel.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,28 +11,9 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import Credit from "./Credit.tsx";
 
-const MAX_PAGE = 5;
-
 const HomePage = () => {
-  const [banner, setBanner] = useState("");
-  const [gameName, setGameName] = useState("");
-
-  // useEffect(() => {
-  //   const randPageNum: number = getRandNum(MAX_PAGE);
-  //   const randGameNum: number = getRandNum(10);
-  //   async function setData() {
-  //     const randPage = await fetchData(randPageNum);
-  //     const randGame = randPage.results[randGameNum];
-  //     setBanner(randGame.background_image);
-  //     setGameName(randGame.name);
-  //     console.log(randGame);
-  //   }
-
-  //   setData();
-  // }, []);
-
-  const bgImg = `linear-gradient(to right, #000000ee 50%, #00000047),
-  url(${banner}) 30% 20%`;
+  // const bgImg = `linear-gradient(to right, #000000ee 50%, #00000047),
+  // url(${banner}) 30% 20%`;
 
   return (
     <section className="home-banner">
@@ -78,7 +56,7 @@ const HomePage = () => {
             linkName="Quazf1x"
           />
           <Credit
-            link="https://github.com/Quazf1x"
+            link="https://rawg.io/apidocs"
             icon={faRegistered}
             linkName="Rawg API"
           />
