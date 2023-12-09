@@ -5,22 +5,30 @@ import getRandNum from "../../helpers/rand.ts";
 const MAX_PAGE = 5;
 
 const Carousel = () => {
-  const [banner, setBanner] = useState("");
+  const [bannerList, setBannerList] = useState("");
+  const [bannerIndex, setBannerIndex] = useState(0);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const randPageNum: number = getRandNum(MAX_PAGE);
-    const randGameNum: number = getRandNum(10);
     async function setData() {
       const randPage = await fetchData(randPageNum);
-      const randGame = randPage.results[randGameNum];
-      setBanner(randGame.background_image);
-      console.log(randGame);
+      setBannerList(randPage.results);
       setLoading(false);
     }
 
     setData();
   }, []);
+
+  const handleNextSlide = () => {
+    if (bannerIndex < 19) setBannerIndex(bannerIndex + 1);
+    else setBannerIndex(0);
+  };
+
+  const handlePrevSlide = () => {
+    if (bannerIndex > 0) setBannerIndex(bannerIndex - 1);
+    else setBannerIndex(19);
+  };
 
   return (
     <div className="carousel-wrapper">
@@ -29,9 +37,25 @@ const Carousel = () => {
           <div className="loader"></div>
         ) : (
           <>
-            <button className="carousel-btn carousel-left-btn">&lt;</button>
-            <img src={banner}></img>
-            <button className="carousel-btn carousel-right-btn">&gt;</button>
+            <button
+              onClick={handlePrevSlide}
+              className="carousel-btn carousel-left-btn"
+            >
+              &lt;
+            </button>
+            {/* will add links later */}
+            <a href="#" target="_blank">
+              <img
+                className="carousel-banner-img"
+                src={bannerList[bannerIndex].background_image}
+              ></img>
+            </a>
+            <button
+              onClick={handleNextSlide}
+              className="carousel-btn carousel-right-btn"
+            >
+              &gt;
+            </button>
           </>
         )}
       </div>

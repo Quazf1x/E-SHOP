@@ -135,11 +135,22 @@
   height: 90%;
   width: 70%;
   position: relative;
+  transition: transform 0.25s ease-in-out;
 }
 
-.carousel-slider img {
+.carousel-slider:hover {
+  transform: scale(1.025);
+}
+
+.carousel-slider > a {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.carousel-banner-img {
   scroll-snap-align: start;
   object-fit: cover;
+  height: 100%;
   width: 100%;
 }
 

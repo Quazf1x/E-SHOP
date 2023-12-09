@@ -12,9 +12,6 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Credit from "./Credit.tsx";
 
 const HomePage = () => {
-  // const bgImg = `linear-gradient(to right, #000000ee 50%, #00000047),
-  // url(${banner}) 30% 20%`;
-
   return (
     <section className="home-banner">
       <div id="banner-prefix">
