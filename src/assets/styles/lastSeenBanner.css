@@ -1,0 +1,46 @@
+.last-seen-banner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  margin-top: 1rem;
+}
+
+.last-seen-wrapper {
+  background-color: var(--lighter-bg);
+  border-radius: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: center;
+  height: 7rem;
+  width: 80%;
+}
+
+#last-seen-left-half {
+  align-items: center;
+  display: flex;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+#last-seen-left-half > svg {
+  margin: 0 0.75rem;
+}
+
+#last-seen-right-half {
+  height: 100%;
+  width: 100%;
+}
+
+#last-seen-right-half > a {
+  transform: skew(-30deg);
+  height: 100%;
+  outline: 1px solid red;
+}
+
+#last-seen-right-half > a > img {
+  object-fit: cover;
+  height: 7rem;
+  width: 33%;
+}
