@@ -6,18 +6,18 @@ const LastSeenBanner = () => {
     <section className="last-seen-banner">
       <div className="last-seen-wrapper">
         <div id="last-seen-left-half">
-          <FontAwesomeIcon icon={faFire} />
+          <FontAwesomeIcon color="var(--lighter-primary)" icon={faFire} />
           <h3>Last seen</h3>
         </div>
         <div id="last-seen-right-half">
-          <a>
-            <img src="https://images.unsplash.com/photo-1683009427666-340595e57e43?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <a href="#" target="_blank">
+            <img src="https://i.playground.ru/p/eU46B-9iIR4ORh9PkXvIZw.jpeg" />
           </a>
-          <a>
-            <img src="https://images.unsplash.com/photo-1552944150-6dd1180e5999?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <a href="#" target="_blank">
+            <img src="https://cubiq.ru/wp-content/uploads/2019/07/PORTAL_WALLPAPER1.jpg" />
           </a>
-          <a>
-            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <a href="#" target="_blank">
+            <img src="https://cdn1.epicgames.com/offer/975d251af0384c88a898a996bda4881d/EGS_PathfinderWrathoftheRighteousEnhancedEdition_OwlcatGames_S1_2560x1440-1f8fcc6e75c681f3976fdd01b413ed68" />
           </a>
         </div>
       </div>
