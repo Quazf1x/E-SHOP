@@ -13,7 +13,7 @@ import Credit from "./Credit.tsx";
 
 const HomeBanner = () => {
   return (
-    <section className="home-banner">
+    <main className="home-banner">
       <div id="banner-prefix">
         <FontAwesomeIcon icon={faCheck} style={{ color: "var(--primary)" }} />
         <p>Version 1.0 online!</p>
@@ -63,7 +63,7 @@ const HomeBanner = () => {
       <div id="home-fifth-sec-wrapper">
         <Carousel />
       </div>
-    </section>
+    </main>
   );
 };
 

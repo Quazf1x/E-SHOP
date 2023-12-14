@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import fetchData from "../../API/FetchData.ts";
 import getRandNum from "../../helpers/rand.ts";
 
@@ -44,12 +45,12 @@ const Carousel = () => {
               &lt;
             </button>
             {/* will add links later */}
-            <a href="#" target="_blank">
+            <Link to="#">
               <img
                 className="carousel-banner-img"
                 src={bannerList[bannerIndex].background_image}
               ></img>
-            </a>
+            </Link>
             <button
               onClick={handleNextSlide}
               className="carousel-btn carousel-right-btn"
