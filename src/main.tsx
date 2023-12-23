@@ -9,6 +9,7 @@ import "./assets/styles/index.css";
 import "./assets/styles/header.css";
 import "./assets/styles/homeBanner.css";
 import "./assets/styles/lastSeenBanner.css";
+import "./assets/styles/browseBanner.css";
 
 const router = createBrowserRouter([
   {

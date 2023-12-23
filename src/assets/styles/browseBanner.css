@@ -1,0 +1,21 @@
+.browse-banner {
+  display: grid;
+  gap: 2rem;
+  grid-template: 7rem 1fr / 15rem 1fr;
+}
+
+.browse-banner > div {
+  border: 1px solid red;
+}
+
+.filter-bar-wrapper {
+  grid-column: 2/3;
+}
+
+.games-grid-wrapper {
+  grid-row: 2/3;
+}
+
+.genre-bar-wrapper {
+  grid-row: 1/3;
+}
