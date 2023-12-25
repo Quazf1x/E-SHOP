@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import {
   faWindows,
   faApple,
@@ -15,6 +16,10 @@ const FilterBar = () => {
         <FontAwesomeIcon icon={faApple} />
         <FontAwesomeIcon icon={faXbox} />
         <FontAwesomeIcon icon={faPlaystation} />
+      </div>
+      <div className="filter-search-wrapper">
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
+        <input className="filter-search" />
       </div>
     </div>
   );
