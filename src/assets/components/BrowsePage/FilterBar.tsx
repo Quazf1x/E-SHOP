@@ -21,6 +21,15 @@ const FilterBar = () => {
         <FontAwesomeIcon icon={faMagnifyingGlass} />
         <input className="filter-search" />
       </div>
+      <div className="filter-sort">
+        <p>Sort by: </p>
+        <span>Rarity</span>
+        <ul className="filter-sort-content">
+          <li>Rarity</li>
+          <li>Name</li>
+          <li>Released</li>
+        </ul>
+      </div>
     </div>
   );
 };

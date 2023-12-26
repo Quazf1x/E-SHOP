@@ -31,7 +31,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  width: 18%;
+  width: clamp(200px, 18%, 350px);
 }
 
 .filter-bar-wrapper > div:first-child > svg {
@@ -50,10 +50,11 @@
 }
 
 .filter-search-wrapper {
+  display: flex;
   position: relative;
   height: 3rem;
 
-  margin-left: 2rem;
+  margin: auto;
   width: 50%;
 }
 
@@ -79,4 +80,25 @@
 .filter-search:focus {
   outline: none;
   border-bottom: 3px solid var(--primary);
+}
+
+.filter-sort {
+  position: relative;
+  display: flex;
+  width: 15%;
+}
+
+.filter-sort-content {
+  display: none;
+  position: absolute;
+  background-color: var(--lighter-bg);
+  list-style: none;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  width: 8rem;
+  z-index: 1;
+}
+
+.filter-sort:hover .filter-sort-content {
+  display: block;
 }
