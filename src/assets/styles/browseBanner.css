@@ -2,11 +2,10 @@
   display: grid;
   gap: 2rem;
   grid-template: 7rem 1fr / 15rem 1fr;
-  margin: 2.5rem;
+  margin: 2.5svw;
 }
 
 .browse-banner > div {
-  /* border: 1px solid red; */
   background-color: var(--dark-grey);
 }
 
@@ -88,15 +87,27 @@
   width: 15%;
 }
 
+.filter-sort > p {
+}
+
 .filter-sort-content {
   display: none;
   position: absolute;
   background-color: var(--lighter-bg);
   list-style: none;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
   width: 8rem;
   z-index: 1;
+}
+
+.filter-sort-content > li {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.2s;
+}
+
+.filter-sort-content > li:hover {
+  background-color: var(--popup-hover-color);
 }
 
 .filter-sort:hover .filter-sort-content {

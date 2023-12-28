@@ -22,8 +22,9 @@ const FilterBar = () => {
         <input className="filter-search" />
       </div>
       <div className="filter-sort">
-        <p>Sort by: </p>
-        <span>Rarity</span>
+        <p>
+          Sort by: <span>Rarity</span>
+        </p>
         <ul className="filter-sort-content">
           <li>Rarity</li>
           <li>Name</li>
