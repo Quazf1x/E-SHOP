@@ -7,15 +7,17 @@ import {
   faPlaystation,
 } from "@fortawesome/free-brands-svg-icons";
 
+import SystemCheckbox from "./SystemCheckbox";
+
 const FilterBar = () => {
   return (
     <div className="filter-bar-wrapper">
       <div>
         <h3 className="filter-heading">System</h3>
-        <FontAwesomeIcon icon={faWindows} />
-        <FontAwesomeIcon icon={faApple} />
-        <FontAwesomeIcon icon={faXbox} />
-        <FontAwesomeIcon icon={faPlaystation} />
+        <SystemCheckbox id="windows-check" icon={faWindows} />
+        <SystemCheckbox id="apple-check" icon={faApple} />
+        <SystemCheckbox id="xbox-check" icon={faXbox} />
+        <SystemCheckbox id="playstation-check" icon={faPlaystation} />
       </div>
       <div className="filter-search-wrapper">
         <FontAwesomeIcon icon={faMagnifyingGlass} />
