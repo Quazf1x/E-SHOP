@@ -13,7 +13,7 @@ const FilterBar = () => {
   return (
     <div className="filter-bar-wrapper">
       <div>
-        <h3 className="filter-heading">System</h3>
+        <h3 className="browse-heading">System</h3>
         <SystemCheckbox id="windows-check" icon={faWindows} />
         <SystemCheckbox id="apple-check" icon={faApple} />
         <SystemCheckbox id="xbox-check" icon={faXbox} />

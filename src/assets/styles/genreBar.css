@@ -1,0 +1,26 @@
+.genre-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 4svh 0;
+}
+
+#genre-heading {
+  padding: 0 2svw;
+  margin-bottom: 1rem;
+}
+
+.genre-button-label {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  position: relative;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.genre-button-label:hover {
+  background-color: var(--popup-hover-color);
+}
+
+.genre-button-label > input {
+  position: absolute;
+  opacity: 0;
+}

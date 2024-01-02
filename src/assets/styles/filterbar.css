@@ -1,9 +1,6 @@
 .filter-bar-wrapper {
   align-items: center;
-  background-color: var(--dark-grey);
-  border-radius: 2rem;
   display: flex;
-  grid-column: 2/3;
   padding: 0 2svw;
 }
 
@@ -36,11 +33,6 @@
 
 .system-checkbox:checked ~ svg {
   color: var(--primary);
-}
-
-.filter-heading {
-  font-size: 1.2rem;
-  text-transform: uppercase;
 }
 
 .filter-search-wrapper {

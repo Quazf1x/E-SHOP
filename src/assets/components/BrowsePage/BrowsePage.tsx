@@ -1,7 +1,7 @@
-import Header from "../Header/header";
-import FilterBar from "./FilterBar";
-import GenreBar from "./GenreBar";
-import GamesGrid from "./GamesGrid";
+import Header from "../Header/header.tsx";
+import FilterBar from "./FilterBar.tsx";
+import GenreBar from "./GenreBar.tsx";
+import GamesGrid from "./GamesGrid.tsx";
 
 const BrowsePage = () => {
   return (

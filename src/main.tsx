@@ -10,7 +10,8 @@ import "./assets/styles/header.css";
 import "./assets/styles/homeBanner.css";
 import "./assets/styles/lastSeenBanner.css";
 import "./assets/styles/browseBanner.css";
-import "./assets/styles/filterbar.css";
+import "./assets/styles/filterBar.css";
+import "./assets/styles/genreBar.css";
 
 const router = createBrowserRouter([
   {
