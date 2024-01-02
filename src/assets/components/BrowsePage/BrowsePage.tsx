@@ -1,11 +1,17 @@
 import Header from "../Header/header";
-import BrowseBanner from "./BrowseBanner";
+import FilterBar from "./FilterBar";
+import GenreBar from "./GenreBar";
+import GamesGrid from "./GamesGrid";
 
 const BrowsePage = () => {
   return (
     <>
       <Header />
-      <BrowseBanner />
+      <main className="browse-banner">
+        <FilterBar />
+        <GenreBar />
+        <GamesGrid />
+      </main>
     </>
   );
 };
