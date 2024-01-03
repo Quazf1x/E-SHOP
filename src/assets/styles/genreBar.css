@@ -24,3 +24,7 @@
   position: absolute;
   opacity: 0;
 }
+
+.genre-button-label > input:checked .genre-button-label {
+  background-color: red;
+}
