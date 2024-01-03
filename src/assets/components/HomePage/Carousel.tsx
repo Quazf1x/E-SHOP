@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import fetchData from "../../API/FetchData.ts";
 import getRandNum from "../../helpers/rand.ts";
 
-const MAX_PAGE = 5;
+const MAX_PAGE: number = 5;
+const MIN_PAGE: number = 1;
 
 const Carousel = () => {
   const [bannerList, setBannerList] = useState("");
@@ -11,9 +12,11 @@ const Carousel = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const randPageNum: number = getRandNum(MAX_PAGE);
+    const randPageNum: number = getRandNum(MAX_PAGE, MIN_PAGE);
     async function setData() {
-      const randPage = await fetchData(randPageNum);
+      const randPage = await fetchData("games", {
+        page: randPageNum.toString(),
+      });
       setBannerList(randPage.results);
       setLoading(false);
     }
