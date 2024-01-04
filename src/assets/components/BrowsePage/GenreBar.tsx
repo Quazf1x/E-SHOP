@@ -6,6 +6,7 @@ const GenreBar = () => {
       <h3 id="genre-heading" className="browse-heading">
         Genre
       </h3>
+      <GenreButton id="No-Genre" genreName="All" />
       <GenreButton id="Action-Genre" genreName="Action" />
       <GenreButton id="Indie-Genre" genreName="Indie" />
       <GenreButton id="Rpg-Genre" genreName="Rpg" />

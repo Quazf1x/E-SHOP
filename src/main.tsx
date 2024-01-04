@@ -12,6 +12,7 @@ import "./assets/styles/lastSeenBanner.css";
 import "./assets/styles/browseBanner.css";
 import "./assets/styles/filterBar.css";
 import "./assets/styles/genreBar.css";
+import "./assets/styles/gamesGrid.css";
 
 const router = createBrowserRouter([
   {
