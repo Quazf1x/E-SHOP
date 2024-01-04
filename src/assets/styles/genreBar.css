@@ -10,8 +10,8 @@
 }
 
 .genre-button-label {
+  display: block;
   cursor: pointer;
-  padding: 1rem 2rem;
   position: relative;
   transition: background-color 0.2s ease-in-out;
 }
@@ -25,6 +25,21 @@
   opacity: 0;
 }
 
-.genre-button-label > input:checked .genre-button-label {
-  background-color: red;
+.genre-button-label > p {
+  transition: all 0.2s;
+
+  padding: 1rem 2rem;
+}
+
+.genre-button-label > input:checked ~ p {
+  background-color: var(--lighter-bg);
+}
+
+.genre-button-label > input:checked ~ p > span {
+  color: var(--primary);
+}
+
+.genre-arrow {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
 }

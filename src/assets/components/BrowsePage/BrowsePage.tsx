@@ -2,8 +2,8 @@ import Header from "../Header/header.tsx";
 import FilterBar from "./FilterBar.tsx";
 import GenreBar from "./GenreBar.tsx";
 import GamesGrid from "./GamesGrid.tsx";
-import fetchData from "../../API/FetchData.ts";
-import { useEffect } from "react";
+// import fetchData from "../../API/FetchData.ts";
+// import { useEffect } from "react";
 
 const BrowsePage = () => {
   // useEffect(() => {

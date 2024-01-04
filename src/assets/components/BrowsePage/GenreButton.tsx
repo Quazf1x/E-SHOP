@@ -7,7 +7,10 @@ const GenreButton = ({ id, genreName }: GenreButtonTypes) => {
   return (
     <label className="genre-button-label" htmlFor={id}>
       <input id={id} type="radio" name="rad" />
-      {genreName}
+      <p>
+        <span className="genre-arrow">&gt;</span>
+        {genreName}
+      </p>
     </label>
   );
 };
