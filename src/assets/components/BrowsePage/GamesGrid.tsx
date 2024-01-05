@@ -13,6 +13,8 @@ const GamesGrid = () => {
       <GameCard />
       <GameCard />
       <GameCard />
+      <GameCard />
+      <GameCard />
     </div>
   );
 };
