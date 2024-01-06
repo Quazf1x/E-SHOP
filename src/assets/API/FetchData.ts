@@ -13,7 +13,6 @@ const fetchData = async (category: string, params?: Record<string, string>) => {
   if (!response.ok) throw new Error("something went wrong!");
 
   const data = await response.json();
-  console.log(data);
   return data;
 };
 

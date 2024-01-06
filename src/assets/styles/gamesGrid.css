@@ -29,7 +29,33 @@
   width: 100%;
 }
 
+.gamecard-info-wrapper > div {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+}
+
 .gamecard-name {
   font-weight: 500;
   font-size: 1.2rem;
+}
+
+.gamecard-add-btn {
+  border: none;
+  background-color: var(--white);
+  cursor: pointer;
+  font-family: "Roboto Condensed", sans-serif;
+  height: 65%;
+  padding: 0 1rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.gamecard-add-btn:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.gamecard-add-btn:active {
+  background-color: var(--lighter-primary);
 }
