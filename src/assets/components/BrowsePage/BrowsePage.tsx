@@ -2,21 +2,21 @@ import Header from "../Header/header.tsx";
 import FilterBar from "./FilterBar.tsx";
 import GenreBar from "./GenreBar.tsx";
 import GamesGrid from "./GamesGrid.tsx";
-// import fetchData from "../../API/FetchData.ts";
-// import { useEffect } from "react";
+import fetchData from "../../API/FetchData.ts";
+import { useEffect, useState } from "react";
 
 const BrowsePage = () => {
-  // useEffect(() => {
-  //   async function setData() {
-  //     const page = await fetchData("games", {
-  //       genres: "action",
-  //       page: "1",
-  //     });
-  //     console.log(page);
-  //   }
+  // edit any type laterrrrrr
+  const [videogameList, setVideogameList] = useState<any>(["Empty"]);
 
-  //   setData();
-  // }, []);
+  useEffect(() => {
+    async function setData() {
+      const list = await fetchData("games");
+      setVideogameList(list.results);
+    }
+
+    setData();
+  }, []);
 
   return (
     <>
@@ -24,7 +24,7 @@ const BrowsePage = () => {
       <main className="browse-banner">
         <FilterBar />
         <GenreBar />
-        <GamesGrid />
+        <GamesGrid gameList={videogameList} />
       </main>
     </>
   );
