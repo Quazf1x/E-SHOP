@@ -1,28 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import fetchData from "../../API/FetchData.ts";
+import useFetch from "../../API/useFetch.ts";
 import getRandNum from "../../helpers/rand.ts";
 
 const MAX_PAGE: number = 5;
 const MIN_PAGE: number = 1;
 
 const Carousel = () => {
-  const [bannerList, setBannerList] = useState("");
   const [bannerIndex, setBannerIndex] = useState(0);
-  const [isLoading, setLoading] = useState(true);
+  const randPageNum: number = getRandNum(MAX_PAGE, MIN_PAGE);
+  const [isLoading, bannerData, error] = useFetch("games", {
+    page: randPageNum.toString(),
+  });
+  //   async function setData() {
+  //     const randPage = await fetchData("games", {
+  //       page: randPageNum.toString(),
+  //     });
+  //     setBannerList(randPage.results);
+  //     setLoading(false);
+  //   }
 
-  useEffect(() => {
-    const randPageNum: number = getRandNum(MAX_PAGE, MIN_PAGE);
-    async function setData() {
-      const randPage = await fetchData("games", {
-        page: randPageNum.toString(),
-      });
-      setBannerList(randPage.results);
-      setLoading(false);
-    }
-
-    setData();
-  }, []);
+  //   setData();
+  // }, []);
 
   const handleNextSlide = () => {
     if (bannerIndex < 19) setBannerIndex(bannerIndex + 1);
@@ -33,6 +32,8 @@ const Carousel = () => {
     if (bannerIndex > 0) setBannerIndex(bannerIndex - 1);
     else setBannerIndex(19);
   };
+
+  console.log(isLoading, bannerData, error);
 
   return (
     <div className="carousel-wrapper">
@@ -51,7 +52,7 @@ const Carousel = () => {
             <Link to="#">
               <img
                 className="carousel-banner-img"
-                src={bannerList[bannerIndex].background_image}
+                src={bannerData.results[bannerIndex].background_image}
               ></img>
             </Link>
             <button

@@ -2,21 +2,11 @@ import Header from "../Header/header.tsx";
 import FilterBar from "./FilterBar.tsx";
 import GenreBar from "./GenreBar.tsx";
 import GamesGrid from "./GamesGrid.tsx";
-import fetchData from "../../API/FetchData.ts";
-import { useEffect, useState } from "react";
+import useFetch from "../../API/useFetch.ts";
 
 const BrowsePage = () => {
   // edit any type laterrrrrr
-  const [videogameList, setVideogameList] = useState<any>(["Empty"]);
-
-  useEffect(() => {
-    async function setData() {
-      const list = await fetchData("games");
-      setVideogameList(list.results);
-    }
-
-    setData();
-  }, []);
+  const [isLoading, videogameList, error] = useFetch("games");
 
   return (
     <>
@@ -24,7 +14,7 @@ const BrowsePage = () => {
       <main className="browse-banner">
         <FilterBar />
         <GenreBar />
-        <GamesGrid gameList={videogameList} />
+        <GamesGrid isLoading={isLoading} gameList={videogameList.results} />
       </main>
     </>
   );
