@@ -17,7 +17,7 @@
 }
 
 .gamecard-info-wrapper {
-  background-color: #ffffff0d;
+  background-color: #ffffff14;
   box-shadow: 0 -10px 10px #00000054;
   backdrop-filter: blur(5px);
 
@@ -33,12 +33,18 @@
   align-items: end;
   display: flex;
   justify-content: space-between;
-  height: 3rem;
+  height: 2rem;
 }
 
 .gamecard-name {
   font-weight: 500;
   font-size: 1.2rem;
+  width: 70%;
+}
+
+.gamecard-name,
+.gamecard-price {
+  text-shadow: 1.2px 1px 2px black;
 }
 
 .gamecard-add-btn {
@@ -46,7 +52,7 @@
   background-color: var(--white);
   cursor: pointer;
   font-family: "Roboto Condensed", sans-serif;
-  height: 65%;
+  height: 100%;
   padding: 0 1rem;
   transition: all 0.15s ease-in-out;
 }

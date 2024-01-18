@@ -9,24 +9,24 @@ type gamesGridProps = {
 const GamesGrid = ({ isLoading, gameList }: gamesGridProps) => {
   console.log(gameList);
   return (
-    <div className="games-grid-wrapper">
+    <>
       {isLoading ? (
         <>
           <div className="loader"></div>
-          <div className="loader"></div>
-          <div className="loader"></div>
-          <div className="loader"></div>
         </>
       ) : (
-        gameList.map((game: object) => {
-          return (
-            <>
-              <GameCard />
-            </>
-          );
-        })
+        <div className="games-grid-wrapper">
+          {gameList.map((game: object) => {
+            console.log(game);
+            return (
+              <>
+                <GameCard bgImg={game.background_image} gameName={game.name} />
+              </>
+            );
+          })}
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
