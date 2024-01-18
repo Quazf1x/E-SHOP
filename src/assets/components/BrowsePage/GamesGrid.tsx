@@ -1,26 +1,31 @@
 import GameCard from "./GameCard";
-import gamePropTypes from "../../API/dataTypes";
+import gameListTypes from "../../API/dataTypes";
 
 type gamesGridProps = {
   isLoading: boolean;
-  gameList: gamePropTypes;
+  gameList: gameListTypes[];
 };
-
-const loadDiv = <div className="loader"></div>;
 
 const GamesGrid = ({ isLoading, gameList }: gamesGridProps) => {
   console.log(gameList);
   return (
     <div className="games-grid-wrapper">
-      {!isLoading
-        ? gameList.map((game) => {
-            return (
-              <>
-                <GameCard />
-              </>
-            );
-          })
-        : loadDiv}
+      {isLoading ? (
+        <>
+          <div className="loader"></div>
+          <div className="loader"></div>
+          <div className="loader"></div>
+          <div className="loader"></div>
+        </>
+      ) : (
+        gameList.map((game: object) => {
+          return (
+            <>
+              <GameCard />
+            </>
+          );
+        })
+      )}
     </div>
   );
 };

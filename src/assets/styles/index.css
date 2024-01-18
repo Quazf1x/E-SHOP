@@ -37,3 +37,34 @@ body {
   padding: 0.5rem;
   margin-right: 0.5rem;
 }
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lighter-bg);
+  transition:
+    opacity 0.75s,
+    visibility 0.75s;
+  height: 100%;
+  width: 100%;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid var(--white);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}

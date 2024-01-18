@@ -4,9 +4,9 @@ const KEY = "911a250b30c54e34a60dcbcf35aba8dd";
 import { useEffect, useState } from "react";
 
 const useFetch = (category: string, params?: Record<string, string>) => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState("");
-  const [error, setError] = useState(null);
+  const [isLoading, setLoading] = useState<boolean>(true);
+  const [data, setData] = useState<object>({});
+  const [isError, setError] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async (
@@ -15,7 +15,7 @@ const useFetch = (category: string, params?: Record<string, string>) => {
     ) => {
       if (!isLoading) {
         setLoading(true);
-        setError(null);
+        setError(false);
       }
 
       const searchParams = new URLSearchParams(params).toString();
@@ -32,7 +32,7 @@ const useFetch = (category: string, params?: Record<string, string>) => {
         setData(data);
       } catch (err) {
         console.error(err);
-        setError(err);
+        setError(true);
       } finally {
         setLoading(false);
       }
@@ -41,7 +41,7 @@ const useFetch = (category: string, params?: Record<string, string>) => {
     fetchData(category, params);
   }, []);
 
-  return [isLoading, data, error];
+  return [isLoading, data, isError] as const;
 };
 
 export default useFetch;

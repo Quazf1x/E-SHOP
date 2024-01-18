@@ -52,7 +52,7 @@ const Carousel = () => {
             <Link to="#">
               <img
                 className="carousel-banner-img"
-                src={bannerData.results[bannerIndex].background_image}
+                src={bannerData?.results[bannerIndex].background_image}
               ></img>
             </Link>
             <button

@@ -5,8 +5,7 @@ import GamesGrid from "./GamesGrid.tsx";
 import useFetch from "../../API/useFetch.ts";
 
 const BrowsePage = () => {
-  // edit any type laterrrrrr
-  const [isLoading, videogameList, error] = useFetch("games");
+  const [isLoading, videogameList, isError] = useFetch("games");
 
   return (
     <>
@@ -14,7 +13,7 @@ const BrowsePage = () => {
       <main className="browse-banner">
         <FilterBar />
         <GenreBar />
-        <GamesGrid isLoading={isLoading} gameList={videogameList.results} />
+        <GamesGrid isLoading={isLoading} gameList={videogameList?.results} />
       </main>
     </>
   );

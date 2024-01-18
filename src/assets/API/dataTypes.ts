@@ -30,8 +30,4 @@ type gameListTypes = {
   short_screenshots: object[];
 };
 
-type gamePropTypes = {
-  gameList: gameListTypes[];
-};
-
-export default gamePropTypes;
+export default gameListTypes;
