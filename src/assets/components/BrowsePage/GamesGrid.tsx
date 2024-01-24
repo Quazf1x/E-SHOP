@@ -1,12 +1,17 @@
 import GameCard from "./GameCard";
-import gameListTypes from "../../API/dataTypes";
+import useFetch from "../../API/useFetch.ts";
+import { useState } from "react";
 
-type gamesGridProps = {
-  isLoading: boolean;
-  gameList: gameListTypes[];
+type gameDataType = {
+  [key: string]: string | null | number | boolean | object;
+  background_image: string;
+  name: string;
 };
 
-const GamesGrid = ({ isLoading, gameList }: gamesGridProps) => {
+const GamesGrid = () => {
+  const [category, setCategory] = useState("games");
+  const [isLoading, gameList, isError] = useFetch(category);
+
   console.log(gameList);
   return (
     <>
@@ -16,7 +21,7 @@ const GamesGrid = ({ isLoading, gameList }: gamesGridProps) => {
         </>
       ) : (
         <div className="games-grid-wrapper">
-          {gameList.map((game: object) => {
+          {gameList.results.map((game: gameDataType) => {
             console.log(game);
             return (
               <>

@@ -1,4 +1,7 @@
-import gameTypes from "./types/gameTypes";
+type gameTypes = {
+  bgImg: string;
+  gameName: string;
+};
 
 const GameCard = ({ bgImg, gameName }: gameTypes) => {
   return (
