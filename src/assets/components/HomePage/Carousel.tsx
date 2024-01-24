@@ -6,13 +6,12 @@ import ErrorElement from "../ErrorElement.tsx";
 
 const MAX_PAGE: number = 5;
 const MIN_PAGE: number = 1;
+const randPageNum: string = getRandNum(MAX_PAGE, MIN_PAGE).toString();
 
 const Carousel = () => {
+  const [params, setParams] = useState({ page: randPageNum });
   const [bannerIndex, setBannerIndex] = useState(0);
-  const randPageNum: number = getRandNum(MAX_PAGE, MIN_PAGE);
-  const [isLoading, bannerData, isError] = useFetch("games", {
-    page: randPageNum.toString(),
-  });
+  const [isLoading, bannerData, isError] = useFetch("games", params);
   //   async function setData() {
   //     const randPage = await fetchData("games", {
   //       page: randPageNum.toString(),

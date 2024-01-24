@@ -39,7 +39,7 @@ const useFetch = (category: string, params?: Record<string, string>) => {
     };
 
     fetchData(category, params);
-  }, []);
+  }, [category, params]);
 
   return [isLoading, data, isError] as const;
 };
