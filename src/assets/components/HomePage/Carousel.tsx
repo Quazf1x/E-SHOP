@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../API/useFetch.ts";
 import getRandNum from "../../helpers/rand.ts";
+import ErrorElement from "../ErrorElement.tsx";
 
 const MAX_PAGE: number = 5;
 const MIN_PAGE: number = 1;
@@ -9,7 +10,7 @@ const MIN_PAGE: number = 1;
 const Carousel = () => {
   const [bannerIndex, setBannerIndex] = useState(0);
   const randPageNum: number = getRandNum(MAX_PAGE, MIN_PAGE);
-  const [isLoading, bannerData, error] = useFetch("games", {
+  const [isLoading, bannerData, isError] = useFetch("games", {
     page: randPageNum.toString(),
   });
   //   async function setData() {
@@ -33,13 +34,13 @@ const Carousel = () => {
     else setBannerIndex(19);
   };
 
-  console.log(isLoading, bannerData, error);
-
   return (
     <div className="carousel-wrapper">
       <div className="carousel-slider">
         {isLoading ? (
           <div className="loader"></div>
+        ) : isError ? (
+          <ErrorElement />
         ) : (
           <>
             <button

@@ -13,6 +13,7 @@ import "./assets/styles/browseBanner.css";
 import "./assets/styles/filterBar.css";
 import "./assets/styles/genreBar.css";
 import "./assets/styles/gamesGrid.css";
+import "./assets/styles/error.css";
 
 const router = createBrowserRouter([
   {
