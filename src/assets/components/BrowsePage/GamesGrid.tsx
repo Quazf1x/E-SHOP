@@ -2,12 +2,7 @@ import GameCard from "./GameCard";
 import useFetch from "../../API/useFetch.ts";
 import { useState } from "react";
 import ErrorElement from "../ErrorElement.tsx";
-
-type gameDataType = {
-  [key: string]: string | null | number | boolean | object;
-  background_image: string;
-  name: string;
-};
+import gameDataType from "./types.ts";
 
 const GamesGrid = () => {
   const [category, setCategory] = useState("games");
@@ -29,7 +24,11 @@ const GamesGrid = () => {
             console.log(game);
             return (
               <>
-                <GameCard bgImg={game.background_image} gameName={game.name} />
+                <GameCard
+                  bgImg={game.background_image}
+                  gameName={game.name}
+                  id={game.id}
+                />
               </>
             );
           })}
