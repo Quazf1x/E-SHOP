@@ -2,6 +2,7 @@ import Header from "../Header/header.tsx";
 import FilterBar from "./FilterBar.tsx";
 import GenreBar from "./GenreBar.tsx";
 import GamesGrid from "./GamesGrid.tsx";
+import BrowseFooter from "./BrowseFooter.tsx";
 
 const BrowsePage = () => {
   return (
@@ -11,6 +12,7 @@ const BrowsePage = () => {
         <FilterBar />
         <GenreBar />
         <GamesGrid />
+        <BrowseFooter />
       </main>
     </>
   );

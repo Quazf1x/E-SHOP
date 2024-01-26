@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./assets/components/HomePage/HomePage.tsx";
 import BrowsePage from "./assets/components/BrowsePage/BrowsePage.tsx";
+import ErrorElement from "./assets/components/ErrorElement.tsx";
 
 import "./assets/styles/index.css";
 import "./assets/styles/header.css";
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+    errorElement: <ErrorElement />,
   },
   {
     path: "games",
