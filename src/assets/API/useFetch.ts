@@ -3,7 +3,11 @@ const KEY = "911a250b30c54e34a60dcbcf35aba8dd";
 
 import { useEffect, useState } from "react";
 
-const useFetch = (category: string, params?: Record<string, string>) => {
+const useFetch = (
+  category: string,
+  params?: Record<string, string>,
+  dep?: any,
+) => {
   const [isLoading, setLoading] = useState<boolean>(true);
   const [data, setData] = useState<object>({});
   const [isError, setError] = useState<boolean>(false);
@@ -39,7 +43,7 @@ const useFetch = (category: string, params?: Record<string, string>) => {
     };
 
     fetchData(category, params);
-  }, [category, params]);
+  }, [dep]);
 
   return [isLoading, data, isError] as const;
 };

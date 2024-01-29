@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorElement />,
   },
   {
-    path: "games",
+    path: "/games/:page",
     element: <BrowsePage />,
   },
 ]);

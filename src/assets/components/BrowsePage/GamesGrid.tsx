@@ -1,15 +1,13 @@
 import GameCard from "./GameCard";
 import useFetch from "../../API/useFetch.ts";
-import { useState } from "react";
 import ErrorElement from "../ErrorElement.tsx";
 import gameDataType from "./types.ts";
 
-const GamesGrid = () => {
-  const [category, setCategory] = useState("games");
-  const [params, setParams] = useState({});
-  const [isLoading, gameList, isError] = useFetch(category, params);
+const GamesGrid = ({ page }) => {
+  const category: string = "games";
+  const params: Record<string, string> = { page: page };
+  const [isLoading, gameList, isError] = useFetch(category, params, page);
 
-  console.log(gameList);
   return (
     <>
       {isLoading ? (
@@ -21,15 +19,13 @@ const GamesGrid = () => {
       ) : (
         <div className="games-grid-wrapper">
           {gameList.results.map((game: gameDataType) => {
-            console.log(game);
             return (
-              <>
-                <GameCard
-                  bgImg={game.background_image}
-                  gameName={game.name}
-                  id={game.id}
-                />
-              </>
+              <GameCard
+                key={`gamecard-${game.id}`}
+                bgImg={game.background_image}
+                gameName={game.name}
+                id={game.id}
+              />
             );
           })}
         </div>
