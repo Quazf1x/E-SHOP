@@ -1,24 +1,24 @@
 import GenreButton from "./GenreButton.tsx";
+import gameGenres from "./data/gameGenresData.ts";
 
 const GenreBar = () => {
+  const gameGenresButtons = gameGenres.map((gameGenre) => {
+    return (
+      <GenreButton
+        key={`genre-button-${gameGenre.id}`}
+        id={gameGenre.id}
+        name={gameGenre.name}
+        isChecked={gameGenre.isChecked}
+      />
+    );
+  });
+
   return (
     <div className="genre-bar-wrapper">
       <h3 id="genre-heading" className="browse-heading">
         Genre
       </h3>
-      <GenreButton id="No-Genre" genreName="All" />
-      <GenreButton id="Action-Genre" genreName="Action" />
-      <GenreButton id="Indie-Genre" genreName="Indie" />
-      <GenreButton id="Rpg-Genre" genreName="Rpg" />
-      <GenreButton id="Strategy-Genre" genreName="Strategy" />
-      <GenreButton id="Shooter-Genre" genreName="Shooter" />
-      <GenreButton id="Casual-Genre" genreName="Casual" />
-      <GenreButton id="Simulation-Genre" genreName="Simulation" />
-      <GenreButton id="Platformer-Genre" genreName="Platformer" />
-      <GenreButton id="Multiplayer-Genre" genreName="Multiplayer" />
-      <GenreButton id="Sports-Genre" genreName="Sports" />
-      <GenreButton id="Fighting-Genre" genreName="Fighting" />
-      <GenreButton id="Family-Genre" genreName="Family" />
+      {gameGenresButtons}
     </div>
   );
 };

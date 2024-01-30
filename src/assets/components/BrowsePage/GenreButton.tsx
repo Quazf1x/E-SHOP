@@ -1,15 +1,12 @@
-type GenreButtonTypes = {
-  id: string;
-  genreName: string;
-};
+import gameGenresTypes from "./data/types";
 
-const GenreButton = ({ id, genreName }: GenreButtonTypes) => {
+const GenreButton = ({ id, name, isChecked }: gameGenresTypes) => {
   return (
     <label className="genre-button-label" htmlFor={id}>
-      <input id={id} type="radio" name="rad" />
+      <input id={id} type="radio" name="genre-radio" checked={isChecked} />
       <p>
         <span className="genre-arrow">&gt;</span>
-        {genreName}
+        {name}
       </p>
     </label>
   );

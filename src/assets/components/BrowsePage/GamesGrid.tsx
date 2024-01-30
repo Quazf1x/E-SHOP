@@ -1,12 +1,26 @@
 import GameCard from "./GameCard";
 import useFetch from "../../API/useFetch.ts";
 import ErrorElement from "../ErrorElement.tsx";
-import gameDataType from "./types.ts";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-const GamesGrid = ({ page }) => {
+type gameDataType = {
+  [key: string]: string | null | number | boolean | object;
+  background_image: string;
+  name: string;
+  id: number;
+};
+
+const GamesGrid = () => {
+  const { page } = useParams();
+
   const category: string = "games";
   const params: Record<string, string> = { page: page };
   const [isLoading, gameList, isError] = useFetch(category, params, page);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [page]);
 
   return (
     <>
