@@ -12,18 +12,18 @@ type gameDataType = {
 };
 
 const GamesGrid = () => {
-  const { page } = useParams();
+  const { genre } = useParams();
 
   const category: string = "games";
   const params: Record<string, string> = {
-    page: page,
+    genres: genre.toLowerCase(),
   };
-  const [isLoading, gameList, isError] = useFetch(category, params, page);
+  const [isLoading, gameList, isError] = useFetch(category, params, genre);
   console.log(gameList);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, [page]);
+  }, [genre]);
 
   return (
     <>

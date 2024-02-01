@@ -1,7 +1,7 @@
 type gameGenresTypes = {
   id: string;
   name: string;
-  isChecked?: boolean;
+  apiString: string;
 };
 
 export default gameGenresTypes;

@@ -8,7 +8,7 @@ const GenreBar = () => {
         key={`genre-button-${gameGenre.id}`}
         id={gameGenre.id}
         name={gameGenre.name}
-        isChecked={gameGenre.isChecked}
+        apiString={gameGenre.apiString}
       />
     );
   });
