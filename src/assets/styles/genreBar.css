@@ -9,34 +9,24 @@
   margin-bottom: 1rem;
 }
 
-.genre-button-label {
+.genre-button-wrapper {
   display: block;
   cursor: pointer;
-  position: relative;
   transition: background-color 0.2s ease-in-out;
 }
 
-.genre-button-label:hover {
+.genre-button-wrapper:hover {
   background-color: var(--popup-hover-color);
 }
 
-.genre-button-label > input {
-  position: absolute;
-  opacity: 0;
+.genre-button-link {
+  color: var(--white);
+  text-decoration: none;
 }
 
-.genre-button-label > p {
-  transition: all 0.25s;
-
+.genre-button-link > p {
   padding: 1rem 2rem;
-}
-
-.genre-button-label > input:checked ~ p {
-  background-color: var(--lighter-bg);
-}
-
-.genre-button-label > input:checked ~ p > span {
-  color: var(--primary);
+  transition: all 0.25s;
 }
 
 .genre-arrow {

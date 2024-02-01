@@ -15,8 +15,11 @@ const GamesGrid = () => {
   const { page } = useParams();
 
   const category: string = "games";
-  const params: Record<string, string> = { page: page };
+  const params: Record<string, string> = {
+    page: page,
+  };
   const [isLoading, gameList, isError] = useFetch(category, params, page);
+  console.log(gameList);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

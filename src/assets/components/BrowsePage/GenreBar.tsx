@@ -18,7 +18,7 @@ const GenreBar = () => {
       <h3 id="genre-heading" className="browse-heading">
         Genre
       </h3>
-      {gameGenresButtons}
+      <ul>{gameGenresButtons}</ul>
     </div>
   );
 };
