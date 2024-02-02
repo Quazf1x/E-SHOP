@@ -15,11 +15,12 @@ const GamesGrid = () => {
   const { genre } = useParams();
 
   const category: string = "games";
-  const params: Record<string, string> = {
-    genres: genre.toLowerCase(),
+  const params = {
+    //if genre is set to a specific one, add it as a parameter for API fetch
+    ...(genre !== "all" && { genres: genre }),
+    page: "1",
   };
   const [isLoading, gameList, isError] = useFetch(category, params, genre);
-  console.log(gameList);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

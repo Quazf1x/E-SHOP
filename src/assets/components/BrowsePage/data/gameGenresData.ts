@@ -4,7 +4,7 @@ const gameGenres: gameGenresTypes[] = [
   {
     id: "No-Genre",
     name: "All",
-    apiString: "",
+    apiString: "all",
   },
 
   {
