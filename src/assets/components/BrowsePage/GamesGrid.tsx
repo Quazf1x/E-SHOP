@@ -1,7 +1,7 @@
 import GameCard from "./GameCard";
 import useFetch from "../../API/useFetch.ts";
 import ErrorElement from "../ErrorElement.tsx";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 type gameDataType = {
@@ -13,18 +13,20 @@ type gameDataType = {
 
 const GamesGrid = () => {
   const { genre } = useParams();
+  const location = useLocation();
 
+  const page = new URLSearchParams(location.search).get("page");
   const category: string = "games";
   const params = {
     //if genre is set to a specific one, add it as a parameter for API fetch
     ...(genre !== "all" && { genres: genre }),
-    page: "1",
+    page: page,
   };
-  const [isLoading, gameList, isError] = useFetch(category, params, genre);
+  const [isLoading, gameList, isError] = useFetch(category, params);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, [genre]);
+  }, [genre, page]);
 
   return (
     <>
