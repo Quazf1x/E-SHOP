@@ -14,10 +14,14 @@ const FilterBar = () => {
     <div className="filter-bar-wrapper">
       <div>
         <h3 className="browse-heading">System</h3>
-        <SystemCheckbox id="windows-check" icon={faWindows} />
-        <SystemCheckbox id="apple-check" icon={faApple} />
-        <SystemCheckbox id="xbox-check" icon={faXbox} />
-        <SystemCheckbox id="playstation-check" icon={faPlaystation} />
+        <SystemCheckbox system="windows" id="windows-check" icon={faWindows} />
+        <SystemCheckbox system="apple" id="apple-check" icon={faApple} />
+        <SystemCheckbox system="xbox" id="xbox-check" icon={faXbox} />
+        <SystemCheckbox
+          system="PS5"
+          id="playstation-check"
+          icon={faPlaystation}
+        />
       </div>
       <div className="filter-search-wrapper">
         <FontAwesomeIcon icon={faMagnifyingGlass} />
