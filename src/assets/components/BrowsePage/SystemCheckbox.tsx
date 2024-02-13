@@ -15,17 +15,22 @@ const SystemCheckbox = ({ id, system, icon }: SystemCheckboxTypes) => {
 
   const onCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checked = e.target.checked;
+    const newSearchParam =
+      searchParams.get("system") == undefined
+        ? system
+        : searchParams.get("system")?.concat(",", system);
     if (checked) {
       setSearchParams((params) => {
-        params.set("system", system);
+        params.set("system", newSearchParam);
         return params;
       });
     } else {
       setSearchParams((params) => {
-        params.delete("system", system);
+        params.delete("system", newSearchParam.replace("," + system, ""));
         return params;
       });
     }
+    console.log(newSearchParam.replace(system, ""));
   };
 
   return (
