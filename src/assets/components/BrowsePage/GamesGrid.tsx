@@ -12,7 +12,7 @@ type gameDataType = {
 };
 
 const GamesGrid = () => {
-  const { genre } = useParams();
+  const { genre, system } = useParams();
   const location = useLocation();
 
   const page = new URLSearchParams(location.search).get("page");
@@ -26,7 +26,7 @@ const GamesGrid = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, [genre, page]);
+  }, [genre, page, system]);
 
   return (
     <>
