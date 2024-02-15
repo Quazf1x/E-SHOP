@@ -9,7 +9,7 @@ import {
 import { useSearchParams } from "react-router-dom";
 
 import SystemCheckbox from "./SystemCheckbox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const FilterBar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -18,25 +18,20 @@ const FilterBar = () => {
   const onCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
     const system: string = e.target.dataset.system;
     const checked = e.target.checked;
-    // const newSearchParam =
-    //   searchParams.get("system") == undefined
-    //     ? system
-    //     : searchParams.get("system")?.concat(",", system);
+    let _currSyms = currSystems;
+
     if (checked) {
-      const _currSystems: string[] = currSystems.push(system);
-      setCurrSystems(_currSystems);
-      //   setSearchParams((params) => {
-      //   params.set("system", newSearchParam);
-      //   return params;
-      // });
+      _currSyms.push(system);
     } else {
-      // setSearchParams((params) => {
-      //   params.delete("system", newSearchParam.replace("," + system, ""));
-      //   return params;
-      // });
+      _currSyms = _currSyms.filter((sys) => sys != system);
     }
+
+    setCurrSystems(_currSyms);
     setSearchParams((params) => {
-      params.set("system", currSystems.join(""));
+      params.set("system", _currSyms.join(","));
+      if (currSystems.length > 0 && _currSyms.length < 1) {
+        params.delete("system");
+      }
       return params;
     });
   };
