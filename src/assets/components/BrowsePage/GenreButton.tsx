@@ -6,7 +6,10 @@ const GenreButton = ({ id, name, apiString }: gameGenresTypes) => {
 
   return (
     <li id={id} className="genre-button-wrapper">
-      <Link className="genre-button-link" to={`/games/${apiString}?page=1`}>
+      <Link
+        className="genre-button-link"
+        to={{ pathname: `/games/${apiString}`, search: location.search }}
+      >
         <p className={apiString == genre ? "chosen-genre" : ""}>
           <span className="genre-arrow">&gt;</span>
           {name}
