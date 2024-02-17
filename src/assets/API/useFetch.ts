@@ -43,7 +43,7 @@ const useFetch = (
     };
 
     fetchData(category, params);
-  }, [params.page, params.genres, params.platforms, dep]);
+  }, [params, dep]);
 
   return [isLoading, data, isError] as const;
 };

@@ -2,7 +2,7 @@ import GameCard from "./GameCard";
 import useFetch from "../../API/useFetch.ts";
 import ErrorElement from "../ErrorElement.tsx";
 import { useLocation, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 type gameDataType = {
   [key: string]: string | null | number | boolean | object;
@@ -20,12 +20,15 @@ const GamesGrid = () => {
   const platforms = urlParams.get("platforms");
   const category: string = "games";
 
-  const params = {
-    //if genre is set to a specific one, add it as a parameter for API fetch
-    ...(genre !== "all" && { genres: genre }),
-    ...(platforms != null && { platforms: platforms }),
-    page: page,
-  };
+  const params = useMemo(() => {
+    return {
+      //if genre is set to a specific one, add it as a parameter for API fetch
+      ...(genre !== "all" && { genres: genre }),
+      ...(platforms != null && { platforms: platforms }),
+      page: page,
+    };
+  }, [genre, platforms, page]);
+
   const [isLoading, gameList, isError] = useFetch(category, params);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../API/useFetch.ts";
 import getRandNum from "../../helpers/rand.ts";
@@ -9,7 +9,9 @@ const MIN_PAGE: number = 1;
 const randPageNum: string = getRandNum(MAX_PAGE, MIN_PAGE).toString();
 
 const Carousel = () => {
-  const params: Record<string, string> = { page: randPageNum };
+  const params: Record<string, string> = useMemo(() => {
+    return { page: randPageNum };
+  }, []);
   const [bannerIndex, setBannerIndex] = useState(0);
   const [isLoading, bannerData, isError] = useFetch("games", params);
   //   async function setData() {
