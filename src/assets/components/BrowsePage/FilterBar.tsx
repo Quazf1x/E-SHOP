@@ -9,7 +9,7 @@ import {
 import { useSearchParams } from "react-router-dom";
 
 import SystemCheckbox from "./SystemCheckbox";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const FilterBar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -28,9 +28,9 @@ const FilterBar = () => {
 
     setCurrSystems(_currSyms);
     setSearchParams((params) => {
-      params.set("system", _currSyms.join(","));
+      params.set("platforms", _currSyms.join(","));
       if (currSystems.length > 0 && _currSyms.length < 1) {
-        params.delete("system");
+        params.delete("platforms");
       }
       return params;
     });

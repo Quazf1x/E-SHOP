@@ -12,21 +12,25 @@ type gameDataType = {
 };
 
 const GamesGrid = () => {
-  const { genre, system } = useParams();
+  const { genre } = useParams();
   const location = useLocation();
+  const urlParams = new URLSearchParams(location.search);
 
-  const page = new URLSearchParams(location.search).get("page");
+  const page = urlParams.get("page");
+  const platforms = urlParams.get("platforms");
   const category: string = "games";
+
   const params = {
     //if genre is set to a specific one, add it as a parameter for API fetch
     ...(genre !== "all" && { genres: genre }),
     page: page,
+    platforms: platforms,
   };
   const [isLoading, gameList, isError] = useFetch(category, params);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, [genre, page, system]);
+  }, [genre, page, platforms]);
 
   return (
     <>

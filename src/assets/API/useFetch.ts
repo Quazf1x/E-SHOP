@@ -33,6 +33,7 @@ const useFetch = (
         if (!response.ok) throw new Error("something went wrong!");
 
         const data = await response.json();
+        console.log(params);
         setData(data);
       } catch (err) {
         console.error(err);

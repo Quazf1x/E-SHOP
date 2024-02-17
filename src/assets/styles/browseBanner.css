@@ -39,8 +39,11 @@
   margin-bottom: 2rem;
 }
 
-.browse-footer > a {
+.browse-footer > button {
+  background-color: transparent;
+  border: none;
   border-radius: 0.5rem;
+  cursor: pointer;
   color: var(--white);
   text-decoration: none;
   margin: 0 0.5rem;
@@ -48,6 +51,6 @@
   transition: background-color 0.15s ease-in-out;
 }
 
-.browse-footer > a:hover {
+.browse-footer > button:hover {
   background-color: var(--popup-hover-color);
 }
