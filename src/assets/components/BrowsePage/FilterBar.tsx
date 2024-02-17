@@ -42,25 +42,25 @@ const FilterBar = () => {
         <h3 className="browse-heading">System</h3>
         <SystemCheckbox
           onCheck={onCheck}
-          system="windows"
+          system="4"
           id="windows-check"
           icon={faWindows}
         />
         <SystemCheckbox
           onCheck={onCheck}
-          system="apple"
+          system="5"
           id="apple-check"
           icon={faApple}
         />
         <SystemCheckbox
           onCheck={onCheck}
-          system="xbox"
+          system="186"
           id="xbox-check"
           icon={faXbox}
         />
         <SystemCheckbox
           onCheck={onCheck}
-          system="PS5"
+          system="187"
           id="playstation-check"
           icon={faPlaystation}
         />

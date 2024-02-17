@@ -23,8 +23,8 @@ const GamesGrid = () => {
   const params = {
     //if genre is set to a specific one, add it as a parameter for API fetch
     ...(genre !== "all" && { genres: genre }),
+    ...(platforms != null && { platforms: platforms }),
     page: page,
-    platforms: platforms,
   };
   const [isLoading, gameList, isError] = useFetch(category, params);
 
