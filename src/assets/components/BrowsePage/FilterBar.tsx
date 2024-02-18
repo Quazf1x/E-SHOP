@@ -36,6 +36,16 @@ const FilterBar = () => {
     });
   };
 
+  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchParams((params) => {
+      params.set("search", e.target.value);
+      if (e.target.value.length == 0) {
+        params.delete("search");
+      }
+      return params;
+    });
+  };
+
   return (
     <div className="filter-bar-wrapper">
       <div>
@@ -67,7 +77,7 @@ const FilterBar = () => {
       </div>
       <div className="filter-search-wrapper">
         <FontAwesomeIcon icon={faMagnifyingGlass} />
-        <input className="filter-search" />
+        <input onChange={onInputChange} className="filter-search" />
       </div>
       <div className="filter-sort">
         <p>

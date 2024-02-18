@@ -18,6 +18,7 @@ const GamesGrid = () => {
 
   const page = urlParams.get("page");
   const platforms = urlParams.get("platforms");
+  const searchSlug = urlParams.get("search");
   const category: string = "games";
 
   const params = useMemo(() => {
@@ -25,9 +26,10 @@ const GamesGrid = () => {
       //if genre is set to a specific one, add it as a parameter for API fetch
       ...(genre !== "all" && { genres: genre }),
       ...(platforms != null && { platforms: platforms }),
+      ...(searchSlug != null && { search: searchSlug }),
       page: page,
     };
-  }, [genre, platforms, page]);
+  }, [genre, platforms, page, searchSlug]);
 
   const [isLoading, gameList, isError] = useFetch(category, params);
 
