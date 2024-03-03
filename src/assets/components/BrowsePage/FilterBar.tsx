@@ -46,6 +46,16 @@ const FilterBar = () => {
     });
   };
 
+  const onOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSearchParams((params) => {
+      params.set("order", e.target.value);
+      if (e.target.value == "none") {
+        params.delete("order");
+      }
+      return params;
+    });
+  };
+
   return (
     <div className="filter-bar-wrapper">
       <div>
@@ -80,14 +90,12 @@ const FilterBar = () => {
         <input onChange={onInputChange} className="filter-search" />
       </div>
       <div className="filter-sort">
-        <p>
-          Sort by: <span>Rarity</span>
-        </p>
-        <ul className="filter-sort-content">
-          <li>Rarity</li>
-          <li>Name</li>
-          <li>Released</li>
-        </ul>
+        <select onChange={onOptionChange} className="filter-sort-content">
+          <option value="none">Sort by</option>
+          <option value="-metacritic">Metacritic</option>
+          <option value="updated">Updated</option>
+          <option value="released">Released</option>
+        </select>
       </div>
     </div>
   );

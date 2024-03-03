@@ -11,7 +11,16 @@ const GameCard = ({ bgImg, gameName, id }: gameTypes) => {
 
   return (
     <div className="gamecard">
-      <img src={bgImg} />
+      <img
+        style={{
+          backgroundColor: "var(--lighter-bg)",
+          display: "flex",
+          textAlign: "center",
+          lineHeight: "400px",
+        }}
+        src={bgImg}
+        alt={gameName}
+      />
       <div className="gamecard-info-wrapper">
         <h4 className="gamecard-name">{gameName}</h4>
         <div>

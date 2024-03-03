@@ -69,37 +69,22 @@
 }
 
 .filter-sort {
-  position: relative;
+  align-items: center;
   display: flex;
   width: 15%;
 }
 
 .filter-sort-content {
-  position: absolute;
-  background-color: var(--lighter-bg);
-  list-style: none;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  width: 8rem;
-  z-index: 1;
-  transform-origin: top;
-  transform: scaleY(0);
-  transition:
-    opacity 0.3s,
-    transform 0.2s ease-in-out;
-}
-
-.filter-sort-content > li {
-  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
   padding: 10px;
-  transition: background-color 0.2s;
+  background-color: var(--lighter-bg);
+  width: 9rem;
 }
 
-.filter-sort-content > li:hover {
-  background-color: var(--popup-hover-color);
-}
-
-.filter-sort:hover .filter-sort-content {
-  transform: scaleY(1);
-  opacity: 1;
+.filter-sort-content:focus {
+  outline: 1px solid var(--primary);
 }

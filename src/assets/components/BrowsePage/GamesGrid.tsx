@@ -19,6 +19,7 @@ const GamesGrid = () => {
   const page = urlParams.get("page");
   const platforms = urlParams.get("platforms");
   const searchSlug = urlParams.get("search");
+  const order = urlParams.get("order");
   const category: string = "games";
 
   const params = useMemo(() => {
@@ -27,9 +28,10 @@ const GamesGrid = () => {
       ...(genre !== "all" && { genres: genre }),
       ...(platforms != null && { platforms: platforms }),
       ...(searchSlug != null && { search: searchSlug }),
+      ...(order != null && { ordering: order }),
       page: page,
     };
-  }, [genre, platforms, page, searchSlug]);
+  }, [genre, platforms, page, searchSlug, order]);
 
   const [isLoading, gameList, isError] = useFetch(category, params);
 
