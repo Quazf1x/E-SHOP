@@ -14,6 +14,10 @@
   object-fit: cover;
   height: 100%;
   width: 100%;
+  background-color: "var(--lighter-bg)";
+  display: "flex";
+  text-align: "center";
+  line-height: "400px";
 }
 
 .gamecard-info-wrapper {
