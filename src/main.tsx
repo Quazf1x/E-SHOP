@@ -16,6 +16,7 @@ import "./assets/styles/filterBar.css";
 import "./assets/styles/genreBar.css";
 import "./assets/styles/gamesGrid.css";
 import "./assets/styles/error.css";
+import "./assets/styles/gameBanner.css";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
     element: <BrowsePage />,
   },
   {
-    path: "/games/game/:game",
+    path: "/games/game/:id",
     element: <GamePage />,
   },
 ]);

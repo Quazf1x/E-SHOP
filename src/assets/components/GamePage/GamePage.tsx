@@ -1,7 +1,7 @@
 import Header from "../Header/header";
 import useFetch from "../../API/useFetch";
-import Carousel from "../HomePage/Carousel";
 import { useParams } from "react-router-dom";
+import Carousel from "../HomePage/Carousel";
 
 const GamePage = () => {
   const { id } = useParams();
@@ -17,6 +17,8 @@ const GamePage = () => {
     <>
       <Header />
       <main className="game-banner">
+        <h1 className="gamepage-header">{gameDetails.name}</h1>
+        <div className="gamepage-infoblock">2</div>
         <Carousel />
       </main>
     </>
