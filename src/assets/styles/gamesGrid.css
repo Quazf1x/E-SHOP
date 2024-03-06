@@ -1,5 +1,6 @@
 .gamecard {
   border-radius: 0.25rem;
+  color: var(--white);
   cursor: pointer;
   position: relative;
   transition: transform 0.2s ease-in-out;

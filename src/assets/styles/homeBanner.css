@@ -142,6 +142,11 @@
   transform: scale(1.025);
 }
 
+.carousel-slider:hover .carousel-btn > svg,
+.carousel-slider:hover .grad-overlay {
+  opacity: 1;
+}
+
 .carousel-slider > a {
   cursor: pointer;
   overflow: hidden;
@@ -152,6 +157,20 @@
   object-fit: cover;
   height: 100%;
   width: 100%;
+}
+
+.grad-overlay {
+  background: linear-gradient(
+    to right,
+    #00000069 1%,
+    transparent,
+    #00000069 99%
+  );
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .carousel-btn {
@@ -165,18 +184,25 @@
   transition: opacity 0.25s ease-in-out;
 }
 
+.carousel-btn > svg {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
 .carousel-btn:hover {
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 .carousel-left-btn {
-  left: 0;
+  left: 10px;
   top: 50%;
+  z-index: 3;
 }
 
 .carousel-right-btn {
-  right: 0;
+  right: 10px;
   top: 50%;
+  z-index: 3;
 }
 
 @media only screen and (max-width: 1240px) {

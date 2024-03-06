@@ -1,5 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import useFetch from "../../API/useFetch.ts";
 import getRandNum from "../../helpers/rand.ts";
 import ErrorElement from "../ErrorElement.tsx";
@@ -14,16 +16,6 @@ const Carousel = () => {
   }, []);
   const [bannerIndex, setBannerIndex] = useState(0);
   const [isLoading, bannerData, isError] = useFetch("games", params);
-  //   async function setData() {
-  //     const randPage = await fetchData("games", {
-  //       page: randPageNum.toString(),
-  //     });
-  //     setBannerList(randPage.results);
-  //     setLoading(false);
-  //   }
-
-  //   setData();
-  // }, []);
 
   const handleNextSlide = () => {
     if (bannerIndex < 19) setBannerIndex(bannerIndex + 1);
@@ -48,20 +40,21 @@ const Carousel = () => {
               onClick={handlePrevSlide}
               className="carousel-btn carousel-left-btn"
             >
-              &lt;
+              <FontAwesomeIcon icon={faAngleLeft} />
             </button>
             {/* will add links later */}
-            <Link to="#">
+            <Link className="carousel-grad-wrapper" to="#">
+              <div className="grad-overlay"></div>
               <img
                 className="carousel-banner-img"
                 src={bannerData?.results[bannerIndex].background_image}
-              ></img>
+              />
             </Link>
             <button
               onClick={handleNextSlide}
               className="carousel-btn carousel-right-btn"
             >
-              &gt;
+              <FontAwesomeIcon icon={faAngleRight} />
             </button>
           </>
         )}
