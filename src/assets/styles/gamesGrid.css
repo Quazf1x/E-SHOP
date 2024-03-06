@@ -3,6 +3,8 @@
   color: var(--white);
   cursor: pointer;
   position: relative;
+
+  text-decoration: none;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -11,14 +13,14 @@
 }
 
 .gamecard > img {
+  background-color: var(--lighter-bg);
+  display: flex;
+  text-align: center;
+  line-height: 400px;
   border-radius: inherit;
   object-fit: cover;
   height: 100%;
   width: 100%;
-  background-color: "var(--lighter-bg)";
-  display: "flex";
-  text-align: "center";
-  line-height: "400px";
 }
 
 .gamecard-info-wrapper {
