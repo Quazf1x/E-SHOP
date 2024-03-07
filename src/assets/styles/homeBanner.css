@@ -118,12 +118,17 @@
   text-transform: uppercase;
 }
 
-.carousel-wrapper {
+.carousel-main-wrapper {
   align-items: center;
   display: flex;
   justify-content: center;
   height: 100%;
   width: 100%;
+}
+
+.carousel-main-wrapper > .carousel-slider {
+  width: 70%;
+  height: 90%;
 }
 
 .carousel-slider {
@@ -132,13 +137,15 @@
   overflow-x: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  height: 90%;
-  width: 70%;
   position: relative;
   transition: transform 0.25s ease-in-out;
 }
 
-.carousel-slider:hover {
+.carousel-img-wrapper {
+  width: 100%;
+}
+
+.carousel-main-wrapper > .carousel-slider:hover {
   transform: scale(1.025);
 }
 

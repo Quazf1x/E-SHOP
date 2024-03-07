@@ -61,7 +61,9 @@ const HomeBanner = () => {
         </div>
       </div>
       <div id="home-fifth-sec-wrapper">
-        <Carousel />
+        <div className="carousel-main-wrapper">
+          <Carousel />
+        </div>
       </div>
     </main>
   );

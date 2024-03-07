@@ -28,37 +28,35 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carousel-wrapper">
-      <div className="carousel-slider">
-        {isLoading ? (
-          <div className="loader"></div>
-        ) : isError ? (
-          <ErrorElement />
-        ) : (
-          <>
-            <button
-              onClick={handlePrevSlide}
-              className="carousel-btn carousel-left-btn"
-            >
-              <FontAwesomeIcon icon={faAngleLeft} />
-            </button>
-            {/* will add links later */}
-            <Link className="carousel-grad-wrapper" to="#">
-              <div className="grad-overlay"></div>
-              <img
-                className="carousel-banner-img"
-                src={bannerData?.results[bannerIndex].background_image}
-              />
-            </Link>
-            <button
-              onClick={handleNextSlide}
-              className="carousel-btn carousel-right-btn"
-            >
-              <FontAwesomeIcon icon={faAngleRight} />
-            </button>
-          </>
-        )}
-      </div>
+    <div className="carousel-slider">
+      {isLoading ? (
+        <div className="loader"></div>
+      ) : isError ? (
+        <ErrorElement />
+      ) : (
+        <>
+          <button
+            onClick={handlePrevSlide}
+            className="carousel-btn carousel-left-btn"
+          >
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </button>
+          {/* will add links later */}
+          <Link className="carousel-img-wrapper" to="#">
+            <div className="grad-overlay"></div>
+            <img
+              className="carousel-banner-img"
+              src={bannerData?.results[bannerIndex].background_image}
+            />
+          </Link>
+          <button
+            onClick={handleNextSlide}
+            className="carousel-btn carousel-right-btn"
+          >
+            <FontAwesomeIcon icon={faAngleRight} />
+          </button>
+        </>
+      )}
     </div>
   );
 };
