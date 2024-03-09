@@ -1,30 +1,37 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import useFetch from "../../API/useFetch.ts";
-import getRandNum from "../../helpers/rand.ts";
 import ErrorElement from "../ErrorElement.tsx";
 
-const MAX_PAGE: number = 5;
-const MIN_PAGE: number = 1;
-const randPageNum: string = getRandNum(MAX_PAGE, MIN_PAGE).toString();
+type carouselTypes = {
+  isLoading: boolean;
+  carouselData: gameDetails[];
+  isError: boolean;
+  maxIndex: number;
+};
 
-const Carousel = () => {
-  const params: Record<string, string> = useMemo(() => {
-    return { page: randPageNum };
-  }, []);
+type gameDetails = {
+  background_image?: string;
+  results?: object;
+};
+
+const Carousel = ({
+  isLoading,
+  carouselData,
+  isError,
+  maxIndex,
+}: carouselTypes) => {
   const [bannerIndex, setBannerIndex] = useState(0);
-  const [isLoading, bannerData, isError] = useFetch("games", params);
 
   const handleNextSlide = () => {
-    if (bannerIndex < 19) setBannerIndex(bannerIndex + 1);
+    if (bannerIndex < maxIndex) setBannerIndex(bannerIndex + 1);
     else setBannerIndex(0);
   };
 
   const handlePrevSlide = () => {
     if (bannerIndex > 0) setBannerIndex(bannerIndex - 1);
-    else setBannerIndex(19);
+    else setBannerIndex(maxIndex);
   };
 
   return (
@@ -46,7 +53,11 @@ const Carousel = () => {
             <div className="grad-overlay"></div>
             <img
               className="carousel-banner-img"
-              src={bannerData?.results[bannerIndex].background_image}
+              src={
+                carouselData[bannerIndex].background_image == undefined
+                  ? carouselData[bannerIndex].image
+                  : carouselData[bannerIndex].background_image
+              }
             />
           </Link>
           <button

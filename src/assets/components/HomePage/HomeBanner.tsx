@@ -1,4 +1,3 @@
-import Carousel from "./Carousel.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheck,
@@ -8,10 +7,24 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { useMemo } from "react";
 
+import Carousel from "./Carousel.tsx";
+import getRandNum from "../../helpers/rand.ts";
+import useFetch from "../../API/useFetch.ts";
 import Credit from "./Credit.tsx";
 
+const MAX_PAGE: number = 5;
+const MIN_PAGE: number = 1;
+const randPageNum: string = getRandNum(MAX_PAGE, MIN_PAGE).toString();
+
 const HomeBanner = () => {
+  const params: Record<string, string> = useMemo(() => {
+    return { page: randPageNum };
+  }, []);
+
+  const [isLoading, carouselData, isError] = useFetch("games", params);
+
   return (
     <main className="home-banner">
       <div id="banner-prefix">
@@ -62,7 +75,12 @@ const HomeBanner = () => {
       </div>
       <div id="home-fifth-sec-wrapper">
         <div className="carousel-main-wrapper">
-          <Carousel />
+          <Carousel
+            isLoading={isLoading}
+            carouselData={carouselData?.results}
+            isError={isError}
+            maxIndex={19}
+          />
         </div>
       </div>
     </main>

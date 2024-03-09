@@ -11,7 +11,7 @@ const GamePage = () => {
   const [isLoadingScreens, gameScreens, isErrorScreens] = useFetch(
     `games/${id}/screenshots`,
   );
-  console.log(gameScreens);
+  console.log(gameScreens.results);
   console.log(gameDetails);
   return (
     <>
@@ -19,7 +19,12 @@ const GamePage = () => {
       <main className="game-banner">
         <h1 className="gamepage-header">{gameDetails.name}</h1>
         <div className="gamepage-infoblock">2</div>
-        <Carousel />
+        <Carousel
+          isLoading={isLoadingScreens}
+          carouselData={gameScreens.results}
+          isError={isErrorScreens}
+          maxIndex={5}
+        />
       </main>
     </>
   );
