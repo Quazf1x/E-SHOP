@@ -9,6 +9,7 @@ type carouselTypes = {
   carouselData: gameDetails[];
   isError: boolean;
   maxIndex: number;
+  hasDots: boolean;
 };
 
 type gameDetails = {
@@ -21,8 +22,10 @@ const Carousel = ({
   carouselData,
   isError,
   maxIndex,
+  hasDots,
 }: carouselTypes) => {
   const [bannerIndex, setBannerIndex] = useState(0);
+  let dotsElem;
 
   const handleNextSlide = () => {
     if (bannerIndex < maxIndex) setBannerIndex(bannerIndex + 1);
@@ -34,6 +37,22 @@ const Carousel = ({
     else setBannerIndex(maxIndex);
   };
 
+  const handleDotSlide = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    setBannerIndex((e.target as HTMLElement as any).dataset.index);
+  };
+
+  if (hasDots) {
+    dotsElem = [...Array(maxIndex)].map((e, i) => (
+      <button
+        onClick={handleDotSlide}
+        className="carousel-dot"
+        data-index={i}
+        key={i}
+      ></button>
+    ));
+  }
   return (
     <div className="carousel-slider">
       {isLoading ? (
@@ -59,6 +78,7 @@ const Carousel = ({
                   : carouselData[bannerIndex].background_image
               }
             />
+            <div className="dots-wrapper">{dotsElem}</div>
           </Link>
           <button
             onClick={handleNextSlide}

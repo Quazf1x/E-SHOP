@@ -17,6 +17,7 @@ import "./assets/styles/genreBar.css";
 import "./assets/styles/gamesGrid.css";
 import "./assets/styles/error.css";
 import "./assets/styles/gameBanner.css";
+import "./assets/styles/carousel.css";
 
 const router = createBrowserRouter([
   {

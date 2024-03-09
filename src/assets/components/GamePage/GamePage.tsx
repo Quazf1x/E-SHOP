@@ -11,8 +11,6 @@ const GamePage = () => {
   const [isLoadingScreens, gameScreens, isErrorScreens] = useFetch(
     `games/${id}/screenshots`,
   );
-  console.log(gameScreens.results);
-  console.log(gameDetails);
   return (
     <>
       <Header />
@@ -24,6 +22,7 @@ const GamePage = () => {
           carouselData={gameScreens.results}
           isError={isErrorScreens}
           maxIndex={5}
+          hasDots={true}
         />
       </main>
     </>
