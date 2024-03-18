@@ -1,6 +1,7 @@
 .game-banner {
   display: grid;
-  grid-template: 4rem 30rem / 1.5fr 1fr;
+  gap: 2rem;
+  grid-template: 2rem 33rem / 2fr 1fr;
   margin: 2rem auto auto auto;
   width: clamp(400px, 90%, 1350px);
 }
@@ -11,10 +12,25 @@
 
 .gamepage-header {
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 2rem;
+}
+
+.game-banner > .carousel-slider {
+  grid-column: 1/2;
 }
 
 .gamepage-infoblock {
-  grid-row: 1/3;
+  grid-row: 2/3;
   grid-column: 2/3;
+}
+
+.gamepage-description {
+  color: var(--greyish);
+  max-height: 50%;
+  overflow-y: scroll;
+}
+
+.gamepage-description::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }

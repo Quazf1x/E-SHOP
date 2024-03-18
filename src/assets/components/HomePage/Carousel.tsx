@@ -8,7 +8,6 @@ type carouselTypes = {
   isLoading: boolean;
   carouselData: gameDetails[];
   isError: boolean;
-  maxIndex: number;
   hasDots: boolean;
 };
 
@@ -21,12 +20,11 @@ const Carousel = ({
   isLoading,
   carouselData,
   isError,
-  maxIndex,
   hasDots,
 }: carouselTypes) => {
   const [bannerIndex, setBannerIndex] = useState(0);
   let dotsElem;
-
+  const maxIndex: number = isLoading ? 0 : carouselData.length - 1;
   const handleNextSlide = () => {
     if (bannerIndex < maxIndex) setBannerIndex(bannerIndex + 1);
     else setBannerIndex(0);

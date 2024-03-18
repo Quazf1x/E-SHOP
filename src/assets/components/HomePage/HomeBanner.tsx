@@ -79,7 +79,7 @@ const HomeBanner = () => {
             isLoading={isLoading}
             carouselData={carouselData?.results}
             isError={isError}
-            maxIndex={19}
+            hasDots={false}
           />
         </div>
       </div>
