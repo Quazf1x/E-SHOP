@@ -25,9 +25,9 @@
   position: relative;
 }
 
-.gamepage-details {
+/* .gamepage-details {
   border: 1px solid red;
-}
+} */
 
 .gamepage-description {
   color: var(--greyish);
