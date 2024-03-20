@@ -42,9 +42,7 @@ const GamesGrid = () => {
   return (
     <>
       {isLoading ? (
-        <>
-          <div className="loader"></div>
-        </>
+        <div className="loader"></div>
       ) : isError ? (
         <ErrorElement />
       ) : (

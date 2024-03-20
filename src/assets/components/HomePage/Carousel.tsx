@@ -9,6 +9,7 @@ type carouselTypes = {
   carouselData: gameDetails[];
   isError: boolean;
   hasDots: boolean;
+  link: boolean;
 };
 
 type gameDetails = {
@@ -21,6 +22,7 @@ const Carousel = ({
   carouselData,
   isError,
   hasDots,
+  link,
 }: carouselTypes) => {
   const [bannerIndex, setBannerIndex] = useState(0);
   let dotsElem;
@@ -65,8 +67,10 @@ const Carousel = ({
           >
             <FontAwesomeIcon icon={faAngleLeft} />
           </button>
-          {/* will add links later */}
-          <Link className="carousel-img-wrapper" to="#">
+          <Link
+            to={link ? `/games/game/${carouselData[bannerIndex].id}` : "#"}
+            className="carousel-img-wrapper"
+          >
             <div className="grad-overlay"></div>
             <img
               className="carousel-banner-img"

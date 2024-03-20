@@ -80,6 +80,7 @@ const HomeBanner = () => {
             carouselData={carouselData?.results}
             isError={isError}
             hasDots={false}
+            link={true}
           />
         </div>
       </div>

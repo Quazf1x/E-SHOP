@@ -12,7 +12,7 @@
 
 .gamepage-header {
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .game-banner > .carousel-slider {
@@ -22,6 +22,11 @@
 .gamepage-infoblock {
   grid-row: 2/3;
   grid-column: 2/3;
+  position: relative;
+}
+
+.gamepage-details {
+  border: 1px solid red;
 }
 
 .gamepage-description {
@@ -33,4 +38,16 @@
 .gamepage-description::-webkit-scrollbar {
   width: 0px;
   background: transparent;
+}
+
+.gamepage-more-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--greyish);
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: right;
+  padding: 1rem;
 }
