@@ -63,7 +63,6 @@
   background-color: var(--white);
   box-shadow: 0 0 5px 5px #00000037;
   cursor: pointer;
-  font-family: "Roboto Condensed", sans-serif;
   height: 100%;
   padding: 0 1rem;
   transition: all 0.15s ease-in-out;

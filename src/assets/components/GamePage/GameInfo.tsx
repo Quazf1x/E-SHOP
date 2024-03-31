@@ -8,6 +8,9 @@ const GameInfo = ({ gameDetails }: GameDetails) => {
   const platforms = gameDetails.parent_platforms
     .map((platform) => platform.platform.name)
     .join(", ");
+  const gameTags = gameDetails.tags.map((tag: GameTag) => {
+    return <GameTag key={tag.id} name={tag.name} />;
+  });
 
   return (
     <div className="gamepage-infoblock">
@@ -17,7 +20,7 @@ const GameInfo = ({ gameDetails }: GameDetails) => {
         <p>Released: {releaseDate}</p>
         <p>Developers: {devNames}</p>
         <p>Platforms: {platforms}</p>
-        <GameTag name="RPG" />
+        <div className="gamepage-tags-wrapper">{gameTags}</div>
         <button className="gamepage-more-btn">More</button>
       </div>
     </div>
@@ -30,7 +33,13 @@ type GameDetails = {
     released: string;
     developers: GameDeveloper[];
     parent_platforms: GamePlatforms[];
+    tags: GameTag[];
   };
+};
+
+type GameTag = {
+  id: number;
+  name: string;
 };
 
 type GameDeveloper = {

@@ -6,10 +6,6 @@
   width: clamp(400px, 90%, 1350px);
 }
 
-/* .game-banner > * {
-  border: 1px solid red;
-} */
-
 .gamepage-header {
   font-weight: 400;
   font-size: 3rem;
@@ -22,17 +18,30 @@
 .gamepage-infoblock {
   grid-row: 2/3;
   grid-column: 2/3;
-  position: relative;
 }
 
-/* .gamepage-details {
-  border: 1px solid red;
-} */
+.gamepage-details {
+  background-color: var(--dark-grey);
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
 
 .gamepage-description {
   color: var(--greyish);
   max-height: 50%;
   overflow-y: scroll;
+}
+
+.gamepage-description::before {
+  content: "";
+  background: linear-gradient(#1b1b1b11, var(--dark-grey) 80%);
+  display: block;
+  pointer-events: none;
+  position: sticky;
+  top: 80%;
+  height: 80px;
+  width: 100%;
 }
 
 .gamepage-description::-webkit-scrollbar {
@@ -44,10 +53,36 @@
   background-color: transparent;
   border: none;
   color: var(--greyish);
-  font-family: "Roboto Condensed", sans-serif;
   font-size: 1rem;
   cursor: pointer;
   width: 100%;
   text-align: right;
   padding: 1rem;
+}
+
+.gamepage-tags-wrapper {
+  margin-top: 1rem;
+  line-height: 2.5rem;
+}
+
+.gamepage-tag {
+  background-color: var(--lighter-bg);
+  border: none;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  white-space: nowrap;
+  color: var(--greyish);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin: 0 0.25rem;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.gamepage-tag:hover {
+  opacity: 0.6;
+}
+
+.gamepage-tag > svg {
+  margin-left: 0.5rem;
 }

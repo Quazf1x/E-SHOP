@@ -27,6 +27,10 @@ body {
   height: 100svh;
 }
 
+button {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
 #root {
   height: 100%;
 }
