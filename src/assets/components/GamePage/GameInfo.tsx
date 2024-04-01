@@ -1,7 +1,10 @@
 import GameTag from "./GameTag.tsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const GameInfo = ({ gameDetails }: GameDetails) => {
-  console.log(gameDetails);
+  const [isCollapsed, setCollapse] = useState(true);
 
   const releaseDate = gameDetails.released.replaceAll("-", ".");
   const devNames = gameDetails.developers.map((dev) => dev.name).join(", ");
@@ -12,17 +15,26 @@ const GameInfo = ({ gameDetails }: GameDetails) => {
     return <GameTag key={tag.id} name={tag.name} />;
   });
 
+  const onMoreClick = () => {
+    setCollapse(!isCollapsed);
+  };
+
   return (
     <div className="gamepage-infoblock">
       <p className="gamepage-description">{gameDetails.description_raw}</p>
 
-      <div className="gamepage-details">
+      <div
+        className="gamepage-details"
+        style={{ maxHeight: isCollapsed ? 0 : "100%" }}
+      >
         <p>Released: {releaseDate}</p>
         <p>Developers: {devNames}</p>
         <p>Platforms: {platforms}</p>
         <div className="gamepage-tags-wrapper">{gameTags}</div>
-        <button className="gamepage-more-btn">More</button>
       </div>
+      <button onClick={onMoreClick} className="gamepage-more-btn">
+        More <FontAwesomeIcon icon={faCaretDown} />
+      </button>
     </div>
   );
 };

@@ -22,9 +22,11 @@
 
 .gamepage-details {
   background-color: var(--dark-grey);
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
+  transition: max-height 0.3s;
+
+  max-height: 0;
+  overflow: hidden;
 }
 
 .gamepage-description {
@@ -60,6 +62,18 @@
   width: 100%;
   text-align: right;
   padding: 1rem;
+  transition: all 0.2s;
+
+  margin-bottom: 1rem;
+
+  background-color: var(--dark-grey);
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.gamepage-more-btn:hover {
+  color: var(--white);
+  font-size: 1.1rem;
 }
 
 .gamepage-tags-wrapper {
@@ -97,6 +111,11 @@
   justify-content: space-between;
   padding: 1rem 2rem;
   height: 6rem;
+  margin-bottom: 1rem;
+}
+
+.gamepage-price-wrapper > p {
+  font-size: 1.4rem;
 }
 
 .gamepage-buy-btn {
