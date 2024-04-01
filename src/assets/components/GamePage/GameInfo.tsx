@@ -1,16 +1,20 @@
-import GameTag from "./GameTag.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import GameTag from "./GameTag.tsx";
 
 const GameInfo = ({ gameDetails }: GameDetails) => {
   const [isCollapsed, setCollapse] = useState(true);
 
-  const releaseDate = gameDetails.released.replaceAll("-", ".");
+  let releaseDate = "Not available";
+  if (gameDetails.released != null)
+    releaseDate = gameDetails.released.replaceAll("-", ".");
+
   const devNames = gameDetails.developers.map((dev) => dev.name).join(", ");
   const platforms = gameDetails.parent_platforms
     .map((platform) => platform.platform.name)
     .join(", ");
+
   const gameTags = gameDetails.tags.map((tag: GameTag) => {
     return <GameTag key={tag.id} name={tag.name} />;
   });

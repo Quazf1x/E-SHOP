@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Carousel from "../HomePage/Carousel";
 import ErrorElement from "../ErrorElement";
 import GameInfo from "./GameInfo";
+import getPrice from "../../helpers/prices.ts";
 
 const GamePage = () => {
   const { id } = useParams();
@@ -13,6 +14,8 @@ const GamePage = () => {
   const [isLoadingScreens, gameScreens, isErrorScreens] = useFetch(
     `games/${id}/screenshots`,
   );
+
+  const price = getPrice(gameDetails.id);
 
   return (
     <>
@@ -35,7 +38,10 @@ const GamePage = () => {
             />
             <div className="gamepage-price-wrapper">
               <p>Buy {gameDetails.name}</p>
-              <button className="gamepage-buy-btn">Add to Cart</button>
+              <button className="gamepage-buy-btn">
+                <span className="gamepage-price">{price}$</span>
+                Add to Cart
+              </button>
             </div>
           </main>
         </>
