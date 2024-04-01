@@ -33,6 +33,10 @@ const GamePage = () => {
               hasDots={true}
               link={false}
             />
+            <div className="gamepage-price-wrapper">
+              <p>Buy {gameDetails.name}</p>
+              <button className="gamepage-buy-btn">Add to Cart</button>
+            </div>
           </main>
         </>
       )}
