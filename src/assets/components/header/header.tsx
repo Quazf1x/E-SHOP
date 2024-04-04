@@ -17,7 +17,7 @@ const Header = () => {
             <Link to="/games/all?page=1">Browse</Link>
           </li>
           <li>
-            <Link to="#">Checkout</Link>
+            <Link to="/checkout">Checkout</Link>
           </li>
         </ul>
       </nav>
