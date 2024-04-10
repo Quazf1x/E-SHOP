@@ -5,10 +5,24 @@ type gameTypes = {
   bgImg: string;
   gameName: string;
   id: number;
+  cartList: object;
+  setCartList: any;
 };
 
-const GameCard = ({ bgImg, gameName, id }: gameTypes) => {
+const GameCard = ({
+  bgImg,
+  gameName,
+  id,
+  cartList,
+  setCartList,
+}: gameTypes) => {
   const price = getPrice(id);
+
+  const addToCard = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCartList([...cartList, { name: gameName, price: price }]);
+  };
 
   return (
     <Link to={`/games/game/${id}`} className="gamecard">
@@ -17,7 +31,9 @@ const GameCard = ({ bgImg, gameName, id }: gameTypes) => {
         <h4 className="gamecard-name">{gameName}</h4>
         <div>
           <p className="gamecard-price">{price}$</p>
-          <button className="gamecard-add-btn">Add</button>
+          <button onClick={addToCard} className="gamecard-add-btn">
+            Add
+          </button>
         </div>
       </div>
     </Link>

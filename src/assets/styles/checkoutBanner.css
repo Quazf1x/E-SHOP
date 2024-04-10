@@ -62,8 +62,8 @@
 
 .ordered-game {
   align-items: center;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template: 1fr / 2fr 2fr 1fr;
   padding: 0 2rem;
   height: 3rem;
 }
@@ -78,10 +78,24 @@
   color: var(--primary);
   cursor: pointer;
   font-size: 1.2rem;
+  justify-self: flex-end;
   transition: all 0.2s ease-in-out;
 }
 
 .ordered-game > button:hover {
   color: var(--white);
   transform: scale(1.1);
+}
+
+.order-price-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.empty-cart {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  height: 100%;
 }

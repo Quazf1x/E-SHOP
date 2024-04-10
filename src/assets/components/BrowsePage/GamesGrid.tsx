@@ -2,7 +2,7 @@ import GameCard from "./GameCard";
 import useFetch from "../../API/useFetch.ts";
 import ErrorElement from "../ErrorElement.tsx";
 import { useLocation, useParams } from "react-router-dom";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type gameDataType = {
   [key: string]: string | null | number | boolean | object;
@@ -15,6 +15,9 @@ const GamesGrid = () => {
   const { genre } = useParams();
   const location = useLocation();
   const urlParams = new URLSearchParams(location.search);
+
+  const cartLocalStorage = JSON.parse(localStorage.getItem("cartList") || "[]");
+  const [cartList, setCartList] = useState(cartLocalStorage);
 
   const page = urlParams.get("page");
   const platforms = urlParams.get("platforms");
@@ -39,6 +42,10 @@ const GamesGrid = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [genre, page, platforms]);
 
+  useEffect(() => {
+    localStorage.setItem("cartList", JSON.stringify(cartList));
+  }, [cartList]);
+
   return (
     <>
       {isLoading ? (
@@ -54,6 +61,8 @@ const GamesGrid = () => {
                 bgImg={game.background_image}
                 gameName={game.name}
                 id={game.id}
+                setCartList={setCartList}
+                cartList={cartList}
               />
             );
           })}
