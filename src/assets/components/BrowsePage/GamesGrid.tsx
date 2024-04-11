@@ -4,7 +4,7 @@ import ErrorElement from "../ErrorElement.tsx";
 import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 
-type gameDataType = {
+type GameDataType = {
   [key: string]: string | null | number | boolean | object;
   background_image: string;
   name: string;
@@ -54,7 +54,7 @@ const GamesGrid = () => {
         <ErrorElement />
       ) : (
         <div className="games-grid-wrapper">
-          {gameList.results.map((game: gameDataType) => {
+          {gameList.results.map((game: GameDataType) => {
             return (
               <GameCard
                 key={`gamecard-${game.id}`}

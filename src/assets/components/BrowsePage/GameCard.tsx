@@ -8,7 +8,7 @@ type gameTypes = {
   gameName: string;
   id: number;
   cartList: object[];
-  setCartList: any;
+  setCartList: React.Dispatch<React.SetStateAction<object[]>>;
 };
 
 const GameCard = ({

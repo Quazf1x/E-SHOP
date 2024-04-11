@@ -27,6 +27,9 @@ const CheckoutPage = () => {
     localStorage.setItem("cartList", JSON.stringify(cartList));
   }, [cartList]);
 
+  let totalPrice = 0;
+  cartList.forEach((order) => (totalPrice += order.price));
+
   return (
     <>
       <Header />
@@ -35,7 +38,7 @@ const CheckoutPage = () => {
         <ul className="order-list">{ordersContent}</ul>
         <div className="confirm-order-wrapper">
           <h2>
-            Total: <span>$14.88</span>
+            Total: <span>${totalPrice.toFixed(2)}</span>
           </h2>
           <button>Buy</button>
         </div>

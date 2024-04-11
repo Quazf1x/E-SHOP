@@ -1,10 +1,10 @@
 const addToCart = (
-  e: any,
+  e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   gameName: string,
   price: number,
   list: object[],
-  setterFunction: any,
-  setterBtn: any,
+  setterFunction: React.Dispatch<React.SetStateAction<object[]>>,
+  setterBtn: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
   e.preventDefault();
   const newOrder = { name: gameName, price: price };

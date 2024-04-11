@@ -18,6 +18,7 @@ const GamePage = () => {
     `games/${id}/screenshots`,
   );
 
+  const price = getPrice(gameDetails.id);
   const cartLocalStorage = JSON.parse(localStorage.getItem("cartList") || "[]");
   const [cartList, setCartList] = useState(cartLocalStorage);
   const [isAdded, setAdded] = useState(false);
@@ -25,8 +26,6 @@ const GamePage = () => {
   useEffect(() => {
     localStorage.setItem("cartList", JSON.stringify(cartList));
   }, [cartList]);
-
-  const price = getPrice(gameDetails.id);
 
   return (
     <>

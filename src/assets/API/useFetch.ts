@@ -3,20 +3,13 @@ const KEY = "911a250b30c54e34a60dcbcf35aba8dd";
 
 import { useEffect, useState } from "react";
 
-const useFetch = (
-  category: string,
-  params?: Record<string, string>,
-  dep?: any,
-) => {
+const useFetch = (category: string, params?: any, dep?: any) => {
   const [isLoading, setLoading] = useState<boolean>(true);
   const [data, setData] = useState<object>({});
   const [isError, setError] = useState<boolean>(false);
 
   useEffect(() => {
-    const fetchData = async (
-      category: string,
-      params?: Record<string, string>,
-    ) => {
+    const fetchData = async (category: string, params?: any) => {
       if (!isLoading) {
         setLoading(true);
         setError(false);

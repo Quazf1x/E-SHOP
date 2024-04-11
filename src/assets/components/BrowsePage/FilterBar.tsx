@@ -16,7 +16,7 @@ const FilterBar = () => {
   const [currSystems, setCurrSystems] = useState<string[]>([]);
 
   const onCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const system: string = e.target.dataset.system;
+    const system: string = e.target.dataset.system || "4";
     const checked = e.target.checked;
     let _currSyms = currSystems;
 
