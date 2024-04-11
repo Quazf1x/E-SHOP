@@ -76,3 +76,8 @@
 .gamecard-add-btn:active {
   background-color: var(--lighter-primary);
 }
+
+.gamecard-add-btn-added {
+  background-color: var(--primary);
+  color: var(--white);
+}

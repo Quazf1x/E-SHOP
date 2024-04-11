@@ -1,5 +1,7 @@
 import getPrice from "../../helpers/prices.ts";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { addToCart } from "../../helpers/storage.ts";
 
 type gameTypes = {
   bgImg: string;
@@ -17,15 +19,7 @@ const GameCard = ({
   setCartList,
 }: gameTypes) => {
   const price = getPrice(id);
-
-  const addToCard = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const newOrder = { name: gameName, price: price };
-    const isInArray =
-      cartList.find((order) => order.name == gameName) !== undefined;
-    if (!isInArray) setCartList([...cartList, newOrder]);
-  };
+  const [isAdded, setAdded] = useState(false);
 
   return (
     <Link to={`/games/game/${id}`} className="gamecard">
@@ -34,8 +28,17 @@ const GameCard = ({
         <h4 className="gamecard-name">{gameName}</h4>
         <div>
           <p className="gamecard-price">{price}$</p>
-          <button onClick={addToCard} className="gamecard-add-btn">
-            Add
+          <button
+            onClick={(e) =>
+              addToCart(e, gameName, price, cartList, setCartList, setAdded)
+            }
+            className={
+              isAdded
+                ? "gamecard-add-btn gamecard-add-btn-added"
+                : "gamecard-add-btn"
+            }
+          >
+            {isAdded ? "Added" : "Add"}
           </button>
         </div>
       </div>
