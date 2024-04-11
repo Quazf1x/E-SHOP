@@ -5,7 +5,7 @@ type gameTypes = {
   bgImg: string;
   gameName: string;
   id: number;
-  cartList: object;
+  cartList: object[];
   setCartList: any;
 };
 
@@ -21,7 +21,10 @@ const GameCard = ({
   const addToCard = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setCartList([...cartList, { name: gameName, price: price }]);
+    const newOrder = { name: gameName, price: price };
+    const isInArray =
+      cartList.find((order) => order.name == gameName) !== undefined;
+    if (!isInArray) setCartList([...cartList, newOrder]);
   };
 
   return (
