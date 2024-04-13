@@ -1,10 +1,10 @@
 import { useSearchParams } from "react-router-dom";
 
 const BrowseFooter = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
 
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const val = (e.target as HTMLInputElement).textContent;
+    const val = (e.target as HTMLInputElement).textContent || "1";
     setSearchParams((params) => {
       params.set("page", val);
       return params;

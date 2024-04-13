@@ -14,7 +14,8 @@ type carouselTypes = {
 
 type gameDetails = {
   background_image?: string;
-  results?: object;
+  image?: string;
+  id: number;
 };
 
 const Carousel = ({

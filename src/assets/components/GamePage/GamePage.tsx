@@ -4,6 +4,7 @@ import ErrorElement from "../ErrorElement";
 import GameInfo from "./GameInfo";
 import getPrice from "../../helpers/prices.ts";
 import useFetch from "../../API/useFetch";
+import { GameDetailsTypes, GameScreensTypes } from "../../API/dataTypes.ts";
 import { addToCart } from "../../helpers/storage.ts";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -11,12 +12,12 @@ import { useState, useEffect } from "react";
 const GamePage = () => {
   const { id } = useParams();
 
-  const [isLoadingDetails, gameDetails, isErrorDetails] = useFetch(
-    `games/${id}`,
-  );
-  const [isLoadingScreens, gameScreens, isErrorScreens] = useFetch(
-    `games/${id}/screenshots`,
-  );
+  const [isLoadingDetails, gameDetails, isErrorDetails] =
+    useFetch<GameDetailsTypes>(`games/${id}`);
+  const [isLoadingScreens, gameScreens, isErrorScreens] =
+    useFetch<GameScreensTypes>(`games/${id}/screenshots`);
+
+  console.log(gameScreens);
 
   const price = getPrice(gameDetails.id);
   const cartLocalStorage = JSON.parse(localStorage.getItem("cartList") || "[]");

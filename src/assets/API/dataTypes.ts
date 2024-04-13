@@ -1,4 +1,72 @@
-type gameListTypes = {
+type GameList = {
+  results: GameListTypes[];
+};
+
+type GameScreensTypes = {
+  count: number;
+  results: {
+    image: string;
+  }[];
+};
+
+type GameDetailsTypes = {
+  id: number;
+  slug: string;
+  name: string;
+  nameOriginal: string;
+  description: string;
+  metacritic: number;
+  metacriticPlatforms: object;
+  released: Date;
+  tba: boolean;
+  updated: Date;
+  backgroundImage: string;
+  backgroundImageAdditional: string;
+  website: string;
+  rating: number;
+  ratingTop: number;
+  ratings: object[];
+  reactions: { [key: string]: number };
+  added: number;
+  addedByStatus: object;
+  playtime: number;
+  screenshotsCount: number;
+  moviesCount: number;
+  creatorsCount: number;
+  achievementsCount: number;
+  parentAchievementsCount: number;
+  redditURL: string;
+  redditName: string;
+  redditDescription: string;
+  redditLogo: string;
+  redditCount: number;
+  twitchCount: number;
+  youtubeCount: number;
+  reviewsTextCount: number;
+  ratingsCount: number;
+  suggestionsCount: number;
+  alternativeNames: any[];
+  metacriticURL: string;
+  parentsCount: number;
+  additionsCount: number;
+  gameSeriesCount: number;
+  userGame: null;
+  reviewsCount: number;
+  saturatedColor: string;
+  dominantColor: string;
+  parentPlatforms: object[];
+  platforms: object[];
+  stores: object[];
+  developers: object[];
+  genres: object[];
+  tags: object[];
+  publishers: object[];
+  esrbRating: object;
+  clip: null;
+  descriptionRaw: string;
+};
+
+type GameListTypes = {
   id: number;
   slug: string;
   name: string;
@@ -30,4 +98,4 @@ type gameListTypes = {
   short_screenshots: object[];
 };
 
-export default gameListTypes;
+export type { GameList, GameDetailsTypes, GameScreensTypes };

@@ -12,7 +12,7 @@ import SystemCheckbox from "./SystemCheckbox";
 import { useState } from "react";
 
 const FilterBar = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
   const [currSystems, setCurrSystems] = useState<string[]>([]);
 
   const onCheck = (e: React.ChangeEvent<HTMLInputElement>) => {

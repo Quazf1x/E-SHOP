@@ -1,18 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import OrderType from "./OrderType.ts";
 
 type OrderTypes = {
   name: string;
   price: number;
-  cartList: {
-    name: string;
-    price: number;
-  }[];
-  setCartList: any;
+  cartList: OrderType[];
+  setCartList: React.Dispatch<React.SetStateAction<object[]>>;
 };
 
 const OrderedGame = ({ name, price, cartList, setCartList }: OrderTypes) => {
-  const removeOrder = (e) => {
+  const removeOrder = () => {
     setCartList(
       cartList.filter((order) => {
         return order.name !== name;

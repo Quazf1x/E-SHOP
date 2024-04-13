@@ -1,5 +1,6 @@
 import Header from "../Header/header.tsx";
 import OrderedGame from "./OrderedGame.tsx";
+import OrderType from "./OrderType.ts";
 import { useState, useEffect } from "react";
 
 const CheckoutPage = () => {
@@ -10,7 +11,7 @@ const CheckoutPage = () => {
     cartList == 0 ? (
       <h1 className="empty-cart">You don't have any items in the cart.</h1>
     ) : (
-      cartList.map((order) => {
+      cartList.map((order: OrderType) => {
         return (
           <OrderedGame
             key={`key-${order.name}`}
@@ -28,7 +29,7 @@ const CheckoutPage = () => {
   }, [cartList]);
 
   let totalPrice = 0;
-  cartList.forEach((order) => (totalPrice += order.price));
+  cartList.forEach((order: OrderType) => (totalPrice += order.price));
 
   return (
     <>

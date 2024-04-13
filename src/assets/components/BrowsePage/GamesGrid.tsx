@@ -37,6 +37,7 @@ const GamesGrid = () => {
   }, [genre, platforms, page, searchSlug, order]);
 
   const [isLoading, gameList, isError] = useFetch(category, params);
+  console.log(gameList);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
