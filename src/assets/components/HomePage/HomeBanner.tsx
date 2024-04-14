@@ -13,6 +13,7 @@ import Carousel from "./Carousel.tsx";
 import getRandNum from "../../helpers/rand.ts";
 import useFetch from "../../API/useFetch.ts";
 import Credit from "./Credit.tsx";
+import { HomeGameScreensTypes } from "../../API/dataTypes.ts";
 
 const MAX_PAGE: number = 5;
 const MIN_PAGE: number = 1;
@@ -23,7 +24,11 @@ const HomeBanner = () => {
     return { page: randPageNum };
   }, []);
 
-  const [isLoading, carouselData, isError] = useFetch("games", params);
+  const [isLoading, carouselData, isError] = useFetch<HomeGameScreensTypes>(
+    "games",
+    params,
+  );
+  console.log(carouselData);
 
   return (
     <main className="home-banner">

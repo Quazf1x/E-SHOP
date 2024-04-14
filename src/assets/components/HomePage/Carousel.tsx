@@ -3,19 +3,14 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import ErrorElement from "../ErrorElement.tsx";
+import { ScreenDetails } from "../../API/dataTypes.ts";
 
 type carouselTypes = {
   isLoading: boolean;
-  carouselData: gameDetails[];
+  carouselData: ScreenDetails[];
   isError: boolean;
   hasDots: boolean;
   link: boolean;
-};
-
-type gameDetails = {
-  background_image?: string;
-  image?: string;
-  id: number;
 };
 
 const Carousel = ({
@@ -45,7 +40,7 @@ const Carousel = ({
   };
 
   if (hasDots) {
-    dotsElem = [...Array(maxIndex)].map((e, i) => (
+    dotsElem = [...Array(maxIndex)].map((_e, i) => (
       <button
         onClick={handleDotSlide}
         className="carousel-dot"

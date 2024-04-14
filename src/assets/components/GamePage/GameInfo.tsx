@@ -2,6 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import GameTag from "./GameTag.tsx";
+import {
+  GameTagType,
+  GameDeveloperType,
+  GamePlatformsType,
+} from "../../API/dataTypes.ts";
 
 const GameInfo = ({ gameDetails }: GameDetails) => {
   const [isCollapsed, setCollapse] = useState(true);
@@ -15,7 +20,7 @@ const GameInfo = ({ gameDetails }: GameDetails) => {
     .map((platform) => platform.platform.name)
     .join(", ");
 
-  const gameTags = gameDetails.tags.map((tag: GameTag) => {
+  const gameTags = gameDetails.tags.map((tag: GameTagType) => {
     return <GameTag key={tag.id} name={tag.name} />;
   });
 
@@ -47,24 +52,9 @@ type GameDetails = {
   gameDetails: {
     description_raw: string;
     released: string;
-    developers: GameDeveloper[];
-    parent_platforms: GamePlatforms[];
-    tags: GameTag[];
-  };
-};
-
-type GameTag = {
-  id: number;
-  name: string;
-};
-
-type GameDeveloper = {
-  name: string;
-};
-
-type GamePlatforms = {
-  platform: {
-    name: string;
+    developers: GameDeveloperType[];
+    parent_platforms: GamePlatformsType[];
+    tags: GameTagType[];
   };
 };
 

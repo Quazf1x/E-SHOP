@@ -2,14 +2,27 @@ type GameList = {
   results: GameListTypes[];
 };
 
+type HomeGameScreensTypes = {
+  count: number;
+  description: string;
+  next: string;
+  results: ScreenDetails[];
+};
+
 type GameScreensTypes = {
   count: number;
-  results: {
-    image: string;
-  }[];
+  results: ScreenDetails[];
+};
+
+type ScreenDetails = {
+  background_image?: string;
+  image?: string;
+  id: number;
 };
 
 type GameDetailsTypes = {
+  description_raw: string;
+  parent_platforms: GamePlatformsType[];
   id: number;
   slug: string;
   name: string;
@@ -17,7 +30,7 @@ type GameDetailsTypes = {
   description: string;
   metacritic: number;
   metacriticPlatforms: object;
-  released: Date;
+  released: string;
   tba: boolean;
   updated: Date;
   backgroundImage: string;
@@ -57,9 +70,9 @@ type GameDetailsTypes = {
   parentPlatforms: object[];
   platforms: object[];
   stores: object[];
-  developers: object[];
+  developers: GameDeveloperType[];
   genres: object[];
-  tags: object[];
+  tags: GameTagType[];
   publishers: object[];
   esrbRating: object;
   clip: null;
@@ -98,4 +111,28 @@ type GameListTypes = {
   short_screenshots: object[];
 };
 
-export type { GameList, GameDetailsTypes, GameScreensTypes };
+type GameTagType = {
+  id: number;
+  name: string;
+};
+
+type GameDeveloperType = {
+  name: string;
+};
+
+type GamePlatformsType = {
+  platform: {
+    name: string;
+  };
+};
+
+export type {
+  GameList,
+  GameDetailsTypes,
+  GameScreensTypes,
+  HomeGameScreensTypes,
+  ScreenDetails,
+  GameDeveloperType,
+  GamePlatformsType,
+  GameTagType,
+};
