@@ -3,13 +3,7 @@ import useFetch from "../../API/useFetch.ts";
 import ErrorElement from "../ErrorElement.tsx";
 import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
-
-type GameDataType = {
-  [key: string]: string | null | number | boolean | object;
-  background_image: string;
-  name: string;
-  id: number;
-};
+import { GameListTypes } from "../../API/dataTypes.ts";
 
 const GamesGrid = () => {
   const { genre } = useParams();
@@ -36,7 +30,10 @@ const GamesGrid = () => {
     };
   }, [genre, platforms, page, searchSlug, order]);
 
-  const [isLoading, gameList, isError] = useFetch(category, params);
+  const [isLoading, gameList, isError] = useFetch<GameListTypes>(
+    category,
+    params,
+  );
   console.log(gameList);
 
   useEffect(() => {
@@ -55,7 +52,7 @@ const GamesGrid = () => {
         <ErrorElement />
       ) : (
         <div className="games-grid-wrapper">
-          {gameList.results.map((game: GameDataType) => {
+          {gameList.results.map((game) => {
             return (
               <GameCard
                 key={`gamecard-${game.id}`}

@@ -17,8 +17,6 @@ const GamePage = () => {
   const [isLoadingScreens, gameScreens, isErrorScreens] =
     useFetch<GameScreensTypes>(`games/${id}/screenshots`);
 
-  console.log(gameDetails);
-
   const price = getPrice(gameDetails.id);
   const cartLocalStorage = JSON.parse(localStorage.getItem("cartList") || "[]");
   const [cartList, setCartList] = useState(cartLocalStorage);

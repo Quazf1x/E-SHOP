@@ -1,5 +1,6 @@
-type GameList = {
-  results: GameListTypes[];
+type GameListTypes = {
+  count: number;
+  results: GameDataType[];
 };
 
 type HomeGameScreensTypes = {
@@ -79,36 +80,11 @@ type GameDetailsTypes = {
   descriptionRaw: string;
 };
 
-type GameListTypes = {
-  id: number;
-  slug: string;
-  name: string;
-  released: string;
-  tba: boolean;
+type GameDataType = {
+  [key: string]: string | null | number | boolean | object;
   background_image: string;
-  rating: number;
-  rating_top: number;
-  ratings: object[];
-  ratings_count: number;
-  reviews_text_count: number;
-  added: number;
-  added_by_status: object;
-  metacritic: number;
-  playtime: number;
-  suggestions_count: number;
-  updated: string;
-  user_game?: null;
-  reviews_count: number;
-  saturated_color: string;
-  dominant_color: string;
-  platforms: object[];
-  parent_platforms: object[];
-  genres: object[];
-  stores: object[];
-  clip?: null;
-  tags: object[];
-  esrb_rating: object;
-  short_screenshots: object[];
+  name: string;
+  id: number;
 };
 
 type GameTagType = {
@@ -127,7 +103,7 @@ type GamePlatformsType = {
 };
 
 export type {
-  GameList,
+  GameListTypes,
   GameDetailsTypes,
   GameScreensTypes,
   HomeGameScreensTypes,

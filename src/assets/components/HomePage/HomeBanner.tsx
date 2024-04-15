@@ -28,7 +28,6 @@ const HomeBanner = () => {
     "games",
     params,
   );
-  console.log(carouselData);
 
   return (
     <main className="home-banner">
