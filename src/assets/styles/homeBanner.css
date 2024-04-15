@@ -4,7 +4,7 @@
   gap: 0 2svw;
   margin: auto;
   margin-top: 2rem;
-  height: 600px;
+  height: fit-content;
   width: clamp(400px, 90%, 1200px);
 }
 
@@ -110,6 +110,24 @@
   grid-row: 2/4;
   grid-column: 2/3;
   max-width: 600px;
+}
+
+@media only screen and (max-width: 950px) {
+  .home-banner {
+    grid-template: 5rem 31rem 1fr / 1fr;
+    margin: none;
+    width: 100%;
+  }
+
+  .home-banner > div {
+    width: 100%;
+  }
+
+  #home-fifth-sec-wrapper {
+    grid-row: 2/3;
+    grid-column: unset;
+    max-width: 600px;
+  }
 }
 
 @media only screen and (max-width: 1240px) {

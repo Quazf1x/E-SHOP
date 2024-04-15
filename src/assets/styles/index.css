@@ -18,13 +18,14 @@
 
 html {
   background-color: var(--bg);
+  height: 100svh;
+  width: 100svw;
 }
 
 body {
   color: var(--white);
   font-size: 18px;
   font-family: "Roboto Condensed", sans-serif;
-  height: 100svh;
 }
 
 button {
@@ -33,6 +34,7 @@ button {
 
 #root {
   height: 100%;
+  width: 100%;
 }
 
 .highlight {

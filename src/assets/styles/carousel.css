@@ -120,3 +120,11 @@
 .carousel-dot:hover {
   opacity: 0.75;
 }
+
+@media only screen and (max-width: 950px) {
+  .carousel-main-wrapper > .carousel-slider {
+    width: 100%;
+    margin: 0 1rem;
+    height: 90%;
+  }
+}

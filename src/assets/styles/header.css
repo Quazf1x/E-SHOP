@@ -46,3 +46,21 @@ header > nav {
   text-decoration: none;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 950px) {
+  header {
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  header > nav {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .link-menu > li {
+    margin: 0 2rem;
+  }
+}
