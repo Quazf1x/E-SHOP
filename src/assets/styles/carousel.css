@@ -127,4 +127,16 @@
     margin: 0 1rem;
     height: 90%;
   }
+
+  .carousel-btn {
+    opacity: 1;
+  }
+
+  .carousel-btn > svg {
+    opacity: 1;
+  }
+
+  .grad-overlay {
+    opacity: 1;
+  }
 }
