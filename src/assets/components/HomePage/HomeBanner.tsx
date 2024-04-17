@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 
 import Carousel from "./Carousel.tsx";
 import getRandNum from "../../helpers/rand.ts";
@@ -54,11 +55,13 @@ const HomeBanner = () => {
           ratione aperiam!
         </p>
         <div id="banner-btn-wrapper">
-          <button className="banner-btn buy-btn">
+          <Link to="/games/all?page=1" className="banner-btn buy-btn">
             <FontAwesomeIcon icon={faGamepad} />
             Browse
-          </button>
-          <button className="banner-btn bleak-btn">Placeholder</button>
+          </Link>
+          <Link to="/checkout" className="banner-btn bleak-btn">
+            Checkout
+          </Link>
         </div>
       </div>
       <div id="banner-credits">

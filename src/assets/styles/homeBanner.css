@@ -40,6 +40,11 @@
   align-self: flex-start;
 }
 
+#banner-btn-wrapper > a {
+  text-decoration: none;
+  text-align: center;
+}
+
 .banner-btn {
   border-radius: 5rem;
   color: var(--white);
@@ -54,6 +59,7 @@
 
 .buy-btn {
   background-color: var(--primary);
+
   border: none;
   font-size: 1rem;
   padding: 1rem 3rem;
@@ -63,13 +69,8 @@
   background-color: var(--lighter-primary);
 }
 
-.banner-btn:active {
-  transform: scale(0.9);
-}
-
 .bleak-btn {
   background-color: var(--lighter-bg);
-  border: none;
   font-size: 0.9rem;
   padding: 0.8rem 2rem;
   margin-left: 1rem;
@@ -164,7 +165,7 @@
     width: 100%;
   }
 
-  #banner-btn-wrapper > button {
+  #banner-btn-wrapper > a {
     margin: 0.5rem 0;
   }
 
