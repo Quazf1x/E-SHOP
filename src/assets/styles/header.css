@@ -53,6 +53,7 @@ header > nav {
     justify-content: space-around;
     flex-direction: column;
     padding: 0;
+    height: unset;
   }
 
   header > nav {

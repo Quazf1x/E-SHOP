@@ -54,3 +54,21 @@
 .browse-footer > button:hover {
   background-color: var(--popup-hover-color);
 }
+
+@media only screen and (max-width: 950px) {
+  .browse-banner {
+    grid-template: 1fr / 1fr;
+  }
+
+  .games-grid-wrapper {
+    grid-row: unset;
+  }
+
+  .genre-bar-wrapper {
+    grid-row: 3/4;
+  }
+
+  .browse-footer {
+    grid-column: unset;
+  }
+}
