@@ -7,13 +7,13 @@ type paramsType = {
   [key: string]: string | number | null;
 };
 
-const useFetch = <T extends object>(
+const useFetch = <T>(
   category: string,
   params?: paramsType,
   dep?: any,
 ): [boolean, T, boolean] => {
   const [isLoading, setLoading] = useState<boolean>(true);
-  const [data, setData] = useState<object>({});
+  const [data, setData] = useState<any>({});
   const [isError, setError] = useState<boolean>(false);
 
   useEffect(() => {
