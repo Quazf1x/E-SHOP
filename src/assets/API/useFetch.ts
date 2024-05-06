@@ -27,6 +27,7 @@ const useFetch = <T>(
       try {
         const response = await fetch(
           `${URL}/${category}?${searchParams}&key=${KEY}`,
+          { mode: "cors" },
         );
         if (!response.ok) throw new Error("something went wrong!");
 
