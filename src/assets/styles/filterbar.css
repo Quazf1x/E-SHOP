@@ -88,3 +88,31 @@
 .filter-sort-content:focus {
   outline: 1px solid var(--primary);
 }
+
+@media only screen and (max-width: 950px) {
+  .filter-bar-wrapper {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .filter-bar-wrapper > div:first-child {
+    width: 80%;
+  }
+
+  .filter-bar-wrapper > div {
+    margin: 0.5rem 0;
+  }
+
+  .filter-search-wrapper {
+    width: 100%;
+  }
+
+  .filter-sort {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .filter-sort-content {
+    width: 100%;
+  }
+}

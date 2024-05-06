@@ -65,7 +65,8 @@
   }
 
   .genre-bar-wrapper {
-    grid-row: 3/4;
+    grid-row: 1/2;
+    margin-top: 1rem;
   }
 
   .browse-footer {
