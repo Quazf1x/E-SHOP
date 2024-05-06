@@ -3,17 +3,13 @@ const KEY = "911a250b30c54e34a60dcbcf35aba8dd";
 
 import { useEffect, useState } from "react";
 
-type paramsType = {
-  [key: string]: string | number | null;
-};
-
 const useFetch = <T>(
   category: string,
-  params?: paramsType,
+  params?: any,
   dep?: any,
 ): [boolean, T, boolean] => {
   const [isLoading, setLoading] = useState<boolean>(true);
-  const [data, setData] = useState<any>({});
+  const [data, setData] = useState<T | object>({});
   const [isError, setError] = useState<boolean>(false);
 
   useEffect(() => {
@@ -44,7 +40,7 @@ const useFetch = <T>(
     fetchData(category, params);
   }, [params, dep]);
 
-  return [isLoading, data, isError] as const;
+  return [isLoading, data as T, isError];
 };
 
 export default useFetch;
