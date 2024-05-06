@@ -99,3 +99,31 @@
   font-weight: 500;
   height: 100%;
 }
+
+@media only screen and (max-width: 950px) {
+  .checkout-banner {
+    grid-template: 4rem 11rem 1fr / 1fr;
+  }
+
+  .checkout-banner > h1 {
+    margin: 1rem 0;
+  }
+
+  .empty-cart {
+    text-align: center;
+  }
+
+  .confirm-order-wrapper {
+    grid-column: unset;
+  }
+
+  .order-list {
+    grid-row: unset;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .ordered-game {
+    padding: 0 1rem;
+  }
+}
