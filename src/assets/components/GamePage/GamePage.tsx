@@ -29,7 +29,7 @@ const GamePage = () => {
   return (
     <>
       {isLoadingDetails ? (
-        <div className="loader"></div>
+        <div className="loader" style={{ minHeight: "100svh" }}></div>
       ) : isErrorDetails ? (
         <ErrorElement />
       ) : (
