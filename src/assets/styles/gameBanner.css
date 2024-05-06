@@ -150,3 +150,44 @@
   pointer-events: none;
   margin-right: 1rem;
 }
+
+@media only screen and (max-width: 950px) {
+  .game-banner {
+    grid-template: 30rem 1fr / 1fr;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .game-banner > .carousel-slider {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  .gamepage-infoblock {
+    max-height: fit-content;
+    grid-row: 4/5;
+    grid-column: unset;
+  }
+  .gamepage-header {
+    grid-row: 2/3;
+    text-align: center;
+  }
+
+  .gamepage-price-wrapper {
+    grid-row: 3/4;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    height: 7rem;
+  }
+
+  .gamepage-buy-btn {
+    margin-top: 0.5rem;
+    min-height: 3rem;
+    width: 100%;
+  }
+
+  .gamepage-description::before {
+    top: 90%;
+    margin-top: -80px;
+  }
+}
