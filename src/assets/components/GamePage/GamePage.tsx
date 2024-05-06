@@ -1,9 +1,9 @@
-import Header from "../Header/header";
-import Carousel from "../HomePage/Carousel";
-import ErrorElement from "../ErrorElement";
-import GameInfo from "./GameInfo";
+import Header from "../Header/Header.tsx";
+import Carousel from "../HomePage/Carousel.tsx";
+import ErrorElement from "../ErrorElement.tsx";
+import GameInfo from "./GameInfo.tsx";
 import getPrice from "../../helpers/prices.ts";
-import useFetch from "../../API/useFetch";
+import useFetch from "../../API/useFetch.ts";
 import { GameDetailsTypes, GameScreensTypes } from "../../API/dataTypes.ts";
 import { addToCart } from "../../helpers/storage.ts";
 import { useParams } from "react-router-dom";

@@ -1,4 +1,4 @@
-import GameCard from "./GameCard";
+import GameCard from "./GameCard.tsx";
 import useFetch from "../../API/useFetch.ts";
 import ErrorElement from "../ErrorElement.tsx";
 import { useLocation, useParams } from "react-router-dom";

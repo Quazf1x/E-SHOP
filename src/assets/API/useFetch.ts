@@ -7,7 +7,7 @@ type paramsType = {
   [key: string]: string | number | null;
 };
 
-const useFetch = <T>(
+const useFetch = <T extends object>(
   category: string,
   params?: paramsType,
   dep?: any,

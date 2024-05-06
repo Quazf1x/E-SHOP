@@ -1,4 +1,4 @@
-import Header from "../Header/header.tsx";
+import Header from "../Header/Header.tsx";
 import OrderedGame from "./OrderedGame.tsx";
 import OrderType from "./OrderType.ts";
 import { useState, useEffect } from "react";

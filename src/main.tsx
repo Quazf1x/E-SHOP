@@ -8,18 +8,7 @@ import ErrorElement from "./assets/components/ErrorElement.tsx";
 import GamePage from "./assets/components/GamePage/GamePage.tsx";
 import CheckoutPage from "./assets/components/CheckoutPage/CheckoutPage.tsx";
 
-import "./assets/styles/index.css";
-import "./assets/styles/header.css";
-import "./assets/styles/homeBanner.css";
-import "./assets/styles/lastSeenBanner.css";
-import "./assets/styles/browseBanner.css";
-import "./assets/styles/filterBar.css";
-import "./assets/styles/genreBar.css";
-import "./assets/styles/gamesGrid.css";
-import "./assets/styles/error.css";
-import "./assets/styles/gameBanner.css";
-import "./assets/styles/carousel.css";
-import "./assets/styles/checkoutBanner.css";
+import.meta.glob("./assets/styles/*.css", { eager: true });
 
 const router = createBrowserRouter([
   {

@@ -1,4 +1,4 @@
-import Header from "../Header/header.tsx";
+import Header from "../Header/Header.tsx";
 import FilterBar from "./FilterBar.tsx";
 import GenreBar from "./GenreBar.tsx";
 import GamesGrid from "./GamesGrid.tsx";

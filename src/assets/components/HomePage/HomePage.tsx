@@ -1,6 +1,6 @@
 import HomeBanner from "./HomeBanner.tsx";
 //import LastSeenBanner from "./LastSeenBanner.tsx";
-import Header from "../Header/header.tsx";
+import Header from "../Header/Header.tsx";
 
 const HomePage = () => {
   return (
