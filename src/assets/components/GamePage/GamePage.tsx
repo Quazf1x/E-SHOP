@@ -7,7 +7,8 @@ import useFetch from "../../API/useFetch.ts";
 import { GameDetailsTypes, GameScreensTypes } from "../../API/dataTypes.ts";
 import { addToCart } from "../../helpers/storage.ts";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../Providers/CartProvider.tsx";
 
 const GamePage = () => {
   const { id } = useParams();
@@ -18,8 +19,7 @@ const GamePage = () => {
     useFetch<GameScreensTypes>(`games/${id}/screenshots`);
 
   const price = getPrice(gameDetails.id);
-  const cartLocalStorage = JSON.parse(localStorage.getItem("cartList") || "[]");
-  const [cartList, setCartList] = useState(cartLocalStorage);
+  const { cartList, setCartList } = useContext(CartContext);
   const [isAdded, setAdded] = useState(false);
 
   useEffect(() => {

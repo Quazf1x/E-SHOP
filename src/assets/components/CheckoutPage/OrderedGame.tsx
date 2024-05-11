@@ -1,15 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
+import { CartContext } from "../Providers/CartProvider.tsx";
 import OrderType from "./OrderType.ts";
 
-type OrderTypes = {
-  name: string;
-  price: number;
-  cartList: OrderType[];
-  setCartList: React.Dispatch<React.SetStateAction<object[]>>;
-};
+const OrderedGame = ({ name, price }: OrderType) => {
+  const { cartList, setCartList } = useContext(CartContext);
 
-const OrderedGame = ({ name, price, cartList, setCartList }: OrderTypes) => {
   const removeOrder = () => {
     setCartList(
       cartList.filter((order) => {
@@ -17,6 +14,7 @@ const OrderedGame = ({ name, price, cartList, setCartList }: OrderTypes) => {
       }),
     );
   };
+
   return (
     <li className="ordered-game">
       <p className="ordered-game-name">{name}</p>

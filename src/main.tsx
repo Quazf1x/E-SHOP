@@ -8,6 +8,8 @@ import ErrorElement from "./assets/components/ErrorElement.tsx";
 import GamePage from "./assets/components/GamePage/GamePage.tsx";
 import CheckoutPage from "./assets/components/CheckoutPage/CheckoutPage.tsx";
 
+import CartProvider from "./assets/components/Providers/CartProvider.tsx";
+
 import.meta.glob("./assets/styles/*.css", { eager: true });
 
 const router = createBrowserRouter([
@@ -32,6 +34,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </React.StrictMode>,
 );

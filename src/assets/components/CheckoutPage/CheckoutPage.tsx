@@ -1,14 +1,14 @@
 import Header from "../Header/Header.tsx";
 import OrderedGame from "./OrderedGame.tsx";
 import OrderType from "./OrderType.ts";
-import { useState, useEffect } from "react";
+import { CartContext } from "../Providers/CartProvider.tsx";
+import { useEffect, useContext } from "react";
 
 const CheckoutPage = () => {
-  const cartLocalStorage = JSON.parse(localStorage.getItem("cartList") || "[]");
-  const [cartList, setCartList] = useState(cartLocalStorage);
+  const { cartList } = useContext(CartContext);
 
   const ordersContent =
-    cartList == 0 ? (
+    cartList.length == 0 ? (
       <h1 className="empty-cart">You don't have any items in the cart.</h1>
     ) : (
       cartList.map((order: OrderType) => {
@@ -17,8 +17,6 @@ const CheckoutPage = () => {
             key={`key-${order.name}`}
             name={order.name}
             price={order.price}
-            cartList={cartList}
-            setCartList={setCartList}
           />
         );
       })

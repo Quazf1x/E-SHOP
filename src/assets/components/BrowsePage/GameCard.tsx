@@ -1,25 +1,20 @@
 import getPrice from "../../helpers/prices.ts";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { addToCart } from "../../helpers/storage.ts";
+import { CartContext } from "../Providers/CartProvider.tsx";
 
 type gameTypes = {
   bgImg: string;
   gameName: string;
   id: number;
-  cartList: object[];
-  setCartList: React.Dispatch<React.SetStateAction<object[]>>;
 };
 
-const GameCard = ({
-  bgImg,
-  gameName,
-  id,
-  cartList,
-  setCartList,
-}: gameTypes) => {
-  const price = getPrice(id);
+const GameCard = ({ bgImg, gameName, id }: gameTypes) => {
+  const { cartList, setCartList } = useContext(CartContext);
   const [isAdded, setAdded] = useState(false);
+
+  const price = getPrice(id);
 
   return (
     <Link to={`/games/game/${id}`} className="gamecard">
