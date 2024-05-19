@@ -8,6 +8,14 @@
   width: clamp(400px, 90%, 1200px);
 }
 
+.home-slide-left {
+  animation: home-slide-left 1s ease-out;
+}
+
+.home-slide-right {
+  animation: home-slide-right 1s ease-out;
+}
+
 .home-banner > div {
   display: flex;
   align-items: center;
@@ -124,6 +132,26 @@
 
   #banner-btn-wrapper {
     margin-top: 2rem;
+  }
+}
+
+@keyframes home-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes home-slide-right {
+  from {
+    transform: translateX(10px);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 

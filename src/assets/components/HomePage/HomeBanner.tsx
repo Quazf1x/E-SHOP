@@ -16,11 +16,11 @@ import useFetch from "../../API/useFetch.ts";
 import Credit from "./Credit.tsx";
 import { HomeGameScreensTypes } from "../../API/dataTypes.ts";
 
-const MAX_PAGE: number = 5;
-const MIN_PAGE: number = 1;
-const randPageNum: string = getRandNum(MAX_PAGE, MIN_PAGE).toString();
-
 const HomeBanner = () => {
+  const MAX_PAGE: number = 5;
+  const MIN_PAGE: number = 1;
+  const randPageNum: string = getRandNum(MAX_PAGE, MIN_PAGE).toString();
+
   const params: Record<string, string> = useMemo(() => {
     return { page: randPageNum };
   }, []);
@@ -32,17 +32,17 @@ const HomeBanner = () => {
 
   return (
     <main className="home-banner">
-      <div id="banner-prefix">
+      <div className="home-slide-left" id="banner-prefix">
         <FontAwesomeIcon icon={faCheck} style={{ color: "var(--primary)" }} />
         <p>Version 1.0 online!</p>
       </div>
-      <div id="carousel-header-wrapper">
+      <div className="home-slide-right" id="carousel-header-wrapper">
         <h2>
-          Featured videogames{" "}
+          Featured videogames
           <FontAwesomeIcon icon={faStar} style={{ color: "var(--primary)" }} />
         </h2>
       </div>
-      <div id="banner-info">
+      <div className="home-slide-left" id="banner-info">
         <h1>
           <FontAwesomeIcon icon={faFire} style={{ marginRight: "1rem" }} />
           All of your favourite <span className="highlight">videogames</span>
@@ -64,7 +64,7 @@ const HomeBanner = () => {
           </Link>
         </div>
       </div>
-      <div id="banner-credits">
+      <div className="home-slide-left" id="banner-credits">
         <h3>Credits</h3>
         <div>
           <Credit
@@ -80,7 +80,7 @@ const HomeBanner = () => {
           ... and many more
         </div>
       </div>
-      <div id="home-fifth-sec-wrapper">
+      <div className="home-slide-right" id="home-fifth-sec-wrapper">
         <div className="carousel-main-wrapper">
           <Carousel
             isLoading={isLoading}
