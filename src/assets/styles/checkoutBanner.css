@@ -3,6 +3,8 @@
   gap: 2rem;
   grid-template: 3rem 11rem 1fr / 1fr 30rem;
   margin: 2.5svw;
+  min-height: fit-content;
+  padding-bottom: 4rem;
 }
 
 .checkout-banner > h1 {

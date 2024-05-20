@@ -2,6 +2,9 @@ import Header from "../Header/Header.tsx";
 import OrderedGame from "./OrderedGame.tsx";
 import OrderType from "./OrderType.ts";
 import { CartContext } from "../Providers/CartProvider.tsx";
+import { pageTransitionMotion } from "../../helpers/motionConstants.ts";
+import { motion } from "framer-motion";
+
 import { useEffect, useContext, useMemo } from "react";
 
 const CheckoutPage = () => {
@@ -34,7 +37,12 @@ const CheckoutPage = () => {
   }, [cartList]);
 
   return (
-    <>
+    <motion.div
+      initial={pageTransitionMotion.initial}
+      animate={pageTransitionMotion.animate}
+      transition={pageTransitionMotion.transition}
+      exit={pageTransitionMotion.exit}
+    >
       <Header />
       <main className="checkout-banner">
         <h1>Checkout</h1>
@@ -46,7 +54,7 @@ const CheckoutPage = () => {
           <button>Buy</button>
         </div>
       </main>
-    </>
+    </motion.div>
   );
 };
 

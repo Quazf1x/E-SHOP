@@ -9,6 +9,8 @@ import { addToCart } from "../../helpers/storage.ts";
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { CartContext } from "../Providers/CartProvider.tsx";
+import { pageTransitionMotion } from "../../helpers/motionConstants.ts";
+import { motion } from "framer-motion";
 
 const GamePage = () => {
   const { id } = useParams();
@@ -33,7 +35,12 @@ const GamePage = () => {
       ) : isErrorDetails ? (
         <ErrorElement />
       ) : (
-        <>
+        <motion.div
+          initial={pageTransitionMotion.initial}
+          animate={pageTransitionMotion.animate}
+          transition={pageTransitionMotion.transition}
+          exit={pageTransitionMotion.exit}
+        >
           <Header />
           <main className="game-banner">
             <h1 className="gamepage-header">{gameDetails.name}</h1>
@@ -69,7 +76,7 @@ const GamePage = () => {
               </button>
             </div>
           </main>
-        </>
+        </motion.div>
       )}
     </>
   );

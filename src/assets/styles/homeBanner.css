@@ -4,7 +4,8 @@
   gap: 0 2svw;
   margin: auto;
   margin-top: 2rem;
-  height: fit-content;
+  min-height: fit-content;
+  height: 87svh;
   width: clamp(400px, 90%, 1200px);
 }
 
