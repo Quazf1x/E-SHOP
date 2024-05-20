@@ -55,6 +55,36 @@
   background-color: var(--popup-hover-color);
 }
 
+.browse-slide-down {
+  animation: browse-slide-down var(--slide-anim-duration) ease-out;
+}
+
+.browse-slide-right {
+  animation: browse-slide-right var(--slide-anim-duration) ease-out;
+}
+
+@keyframes browse-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes browse-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @media only screen and (max-width: 950px) {
   .browse-banner {
     grid-template: 1fr / 1fr;

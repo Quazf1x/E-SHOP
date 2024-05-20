@@ -5,6 +5,8 @@ import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useMemo, useContext } from "react";
 import { CartContext } from "../Providers/CartProvider.tsx";
 import { GameListTypes } from "../../API/dataTypes.ts";
+import { gamesGridVariants } from "../../helpers/motionConstants.ts";
+import { motion } from "framer-motion";
 
 const GamesGrid = () => {
   const { genre } = useParams();
@@ -50,7 +52,12 @@ const GamesGrid = () => {
       ) : isError ? (
         <ErrorElement />
       ) : (
-        <div className="games-grid-wrapper">
+        <motion.div
+          variants={gamesGridVariants}
+          initial="hidden"
+          animate="show"
+          className="games-grid-wrapper"
+        >
           {gameList.results.map((game) => {
             return (
               <GameCard
@@ -61,7 +68,7 @@ const GamesGrid = () => {
               />
             );
           })}
-        </div>
+        </motion.div>
       )}
     </>
   );

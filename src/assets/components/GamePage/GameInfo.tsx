@@ -29,7 +29,7 @@ const GameInfo = ({ gameDetails }: GameDetails) => {
   };
 
   return (
-    <div className="gamepage-infoblock">
+    <div className="gamepage-infoblock game-slide-left">
       <p className="gamepage-description">{gameDetails.description_raw}</p>
 
       <div

@@ -14,7 +14,7 @@ const GenreBar = () => {
   });
 
   return (
-    <div className="genre-bar-wrapper">
+    <div className="genre-bar-wrapper browse-slide-right">
       <h3 id="genre-heading" className="browse-heading">
         Genre
       </h3>

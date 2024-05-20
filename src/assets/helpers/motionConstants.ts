@@ -7,4 +7,19 @@ const pageTransitionMotion = {
   exit: { opacity: 0, y: 25 },
 };
 
-export { pageTransitionMotion };
+const gamesGridVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const gameCardVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
+export { pageTransitionMotion, gamesGridVariants, gameCardVariants };

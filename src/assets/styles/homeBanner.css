@@ -10,11 +10,11 @@
 }
 
 .home-slide-left {
-  animation: home-slide-left 1s ease-out;
+  animation: home-slide-left var(--slide-anim-duration) ease-out;
 }
 
 .home-slide-right {
-  animation: home-slide-right 1s ease-out;
+  animation: home-slide-right var(--slide-anim-duration) ease-out;
 }
 
 .home-banner > div {

@@ -57,7 +57,7 @@ const FilterBar = () => {
   };
 
   return (
-    <div className="filter-bar-wrapper">
+    <div className="filter-bar-wrapper browse-slide-down">
       <div>
         <h3 className="browse-heading">System</h3>
         <SystemCheckbox

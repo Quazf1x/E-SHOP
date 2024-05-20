@@ -43,7 +43,9 @@ const GamePage = () => {
         >
           <Header />
           <main className="game-banner">
-            <h1 className="gamepage-header">{gameDetails.name}</h1>
+            <h1 className="gamepage-header game-slide-right">
+              {gameDetails.name}
+            </h1>
             <GameInfo gameDetails={gameDetails} />
             <Carousel
               isLoading={isLoadingScreens}

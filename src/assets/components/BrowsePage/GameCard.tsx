@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { addToCart } from "../../helpers/storage.ts";
 import { CartContext } from "../Providers/CartProvider.tsx";
+import { motion } from "framer-motion";
+import { gameCardVariants } from "../../helpers/motionConstants.ts";
 
 type gameTypes = {
   bgImg: string;
   gameName: string;
   id: number;
 };
+
+const MotionLink = motion(Link);
 
 const GameCard = ({ bgImg, gameName, id }: gameTypes) => {
   const { cartList, setCartList } = useContext(CartContext);
@@ -17,7 +21,11 @@ const GameCard = ({ bgImg, gameName, id }: gameTypes) => {
   const price = getPrice(id);
 
   return (
-    <Link to={`/games/game/${id}`} className="gamecard">
+    <MotionLink
+      variants={gameCardVariants}
+      to={`/games/game/${id}`}
+      className="gamecard"
+    >
       <img src={bgImg} alt={gameName} />
       <div className="gamecard-info-wrapper">
         <h4 className="gamecard-name">{gameName}</h4>
@@ -37,7 +45,7 @@ const GameCard = ({ bgImg, gameName, id }: gameTypes) => {
           </button>
         </div>
       </div>
-    </Link>
+    </MotionLink>
   );
 };
 
