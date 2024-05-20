@@ -101,6 +101,35 @@
   font-weight: 500;
   height: 100%;
 }
+.checkout-slide-left {
+  animation: checkout-slide-left var(--slide-anim-duration) ease-out;
+}
+
+.checkout-slide-right {
+  animation: checkout-slide-right var(--slide-anim-duration) ease-out;
+}
+
+@keyframes checkout-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes checkout-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 @media only screen and (max-width: 950px) {
   .checkout-banner {

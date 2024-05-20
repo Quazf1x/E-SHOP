@@ -45,9 +45,9 @@ const CheckoutPage = () => {
     >
       <Header />
       <main className="checkout-banner">
-        <h1>Checkout</h1>
-        <ul className="order-list">{ordersContent}</ul>
-        <div className="confirm-order-wrapper">
+        <h1 className="checkout-slide-right">Checkout</h1>
+        <ul className="order-list checkout-slide-right">{ordersContent}</ul>
+        <div className="confirm-order-wrapper checkout-slide-left">
           <h2>
             Total: <span>${totalPrice.toFixed(2)}</span>
           </h2>
