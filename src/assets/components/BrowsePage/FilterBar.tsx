@@ -39,6 +39,7 @@ const FilterBar = () => {
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchParams((params) => {
       params.set("search", e.target.value);
+      params.set("page", "1");
       if (e.target.value.length == 0) {
         params.delete("search");
       }
